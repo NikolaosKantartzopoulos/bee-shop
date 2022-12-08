@@ -1,0 +1,14 @@
+.shopComponent {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+  margin: auto;
+}
+
+.sidebarSection {
+  width: clamp(150px, 15%, 200px);
+}
+
+.ProductGallerySection {
+  width: clamp(300px, 85%, 960px);
+}

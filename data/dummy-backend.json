@@ -1,0 +1,86 @@
+{"products":{
+  "Zeus": {
+    "id": "1",
+    "from": "Pine",
+    "price": 15,
+    "size": 500,
+		"url": "/assets/images/jar.png"
+  },
+  "Hera": {
+    "id": "2",
+    "from": "Wild Flower",
+    "price": 20,
+    "size": 500,
+		"url": "/assets/images/jar.png"
+  },
+  "Poseidon": {
+    "id": "3",
+    "from": "Thyme",
+    "price": 12,
+    "size": 700,
+		"url": "/assets/images/jar.png"
+  },
+  "Demeter": {
+    "id": "4",
+    "from": "Pine",
+    "price": 18,
+    "size": 500,
+		"url": "/assets/images/jar.png"
+  },
+  "Athena": {
+    "id": "5",
+    "from": "Wild Flower",
+    "price": 10,
+    "size": 600,
+		"url": "/assets/images/jar.png"
+  },
+  "Apollo": {
+    "id": "6",
+    "from": "Oak",
+    "price": 10,
+    "size": 500,
+		"url": "/assets/images/jar.png"
+  },
+  "Artemis": {
+    "id": "7",
+    "from": "Heather",
+    "price": 20,
+    "size": 400,
+		"url": "/assets/images/jar.png"
+  },
+  "Ares": {
+    "id": "8",
+    "from": "Oak",
+    "price": 23,
+    "size": 500,
+		"url": "/assets/images/jar.png"
+  },
+  "Hephaestus": {
+    "id": "9",
+    "from": "Wild Flower",
+    "price": 0,
+    "size": 0,
+		"url": "/assets/images/jar.png"
+  },
+  "Aphrodite": {
+    "id": "10",
+    "from": "Heather",
+    "price": 12,
+    "size": 300,
+		"url": "/assets/images/jar.png"
+  },
+  "Hermes": {
+    "id": "11",
+    "from": "Wild Flower",
+    "price": 7,
+    "size": 1000,
+		"url": "/assets/images/jar.png"
+  },
+  "Dionysus": {
+    "id": "12",
+    "from": "Pine",
+    "price": 14,
+    "size": 200,
+		"url": "/assets/images/jar.png"
+  }}
+}

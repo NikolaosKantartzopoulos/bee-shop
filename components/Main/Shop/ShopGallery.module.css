@@ -1,0 +1,30 @@
+.shopGallerySection {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  text-align: center;
+}
+
+.productSlot {
+  border: 1px solid black;
+  padding: 0.5rem;
+  flex-grow: 1;
+
+}
+
+.productImage {
+  margin: auto;
+}
+
+.info {
+  font-size: 0.8rem;
+}
+
+.quantity {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}

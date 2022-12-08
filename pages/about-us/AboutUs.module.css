@@ -1,0 +1,38 @@
+.twoWords {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  position: relative;
+  height: 100vh;
+}
+
+.profile {
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  right: 50vw;
+  text-align: justify
+}
+
+.ourMission {
+  position: absolute;
+  top: 60vh;
+  left: 45vw;
+  right: 5vw;
+  text-align: justify
+}
+
+.smallBio,
+.someWords {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.beekeeperImage {
+  border-radius: 50%;
+  margin: auto;
+}
