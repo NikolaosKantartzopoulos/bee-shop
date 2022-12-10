@@ -58,8 +58,8 @@
   "Hephaestus": {
     "id": "9",
     "from": "Wild Flower",
-    "price": 0,
-    "size": 0,
+    "price": 13,
+    "size": 750,
 		"url": "/assets/images/jar.png"
   },
   "Aphrodite": {

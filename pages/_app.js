@@ -1,15 +1,19 @@
 import "../styles/globals.css";
 
 import { CartContextProvider } from "../data/CartContext";
+import { ShowcaseContextProvider } from "../data/ShowcaseContext";
 
-import Navbar from "../components/Header/Navbar/Navbar";
+import Layout from "../components/Header/Layout";
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<CartContextProvider>
-			<Navbar />
-			<Component {...pageProps} />
-		</CartContextProvider>
+		<ShowcaseContextProvider>
+			<CartContextProvider>
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</CartContextProvider>
+		</ShowcaseContextProvider>
 	);
 }
 

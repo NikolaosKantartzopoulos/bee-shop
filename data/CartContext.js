@@ -5,6 +5,7 @@ const CartContext = createContext({
 	totalAmount: 0,
 	addItem: (item) => {},
 	removeItem: (item) => {},
+	getAmountOfItemsInCart: () => {},
 });
 
 function cartReducer(state, action) {
@@ -81,11 +82,20 @@ export function CartContextProvider(props) {
 			item: item,
 		});
 	}
+
+	function getAmountOfItemsInCart() {
+		return cartState.items.reduce(
+			(accumulator, item) => accumulator + item.amount,
+			0
+		);
+	}
+
 	const cartContext = {
 		items: cartState.items,
 		totalAmount: cartState.totalAmount,
 		addItem: addItemToCartHandler,
 		removeItem: removeItemFromCartHandler,
+		getAmountOfItemsInCart: getAmountOfItemsInCart,
 	};
 	return (
 		<CartContext.Provider value={cartContext}>

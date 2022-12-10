@@ -8,7 +8,7 @@ import beekeeperImage from "/public/assets/images/beekeeper.jpg";
 
 function AboutUS() {
 	return (
-		<div>
+		<div className={styles.aboutUsSection}>
 			<div id="twoWords" className={styles.twoWords}>
 				<div id="profile" className={styles.profile}>
 					<h3>PROFILE</h3>

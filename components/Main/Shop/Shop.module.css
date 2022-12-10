@@ -1,8 +1,11 @@
 .shopComponent {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 200px calc(100% - 200px - 1rem);
   gap: 1rem;
   margin: auto;
+  width: 100%;
+  justify-content: space-around;
+  align-items: start;
 }
 
 .sidebarSection {
@@ -10,5 +13,5 @@
 }
 
 .ProductGallerySection {
-  width: clamp(300px, 85%, 960px);
+  width: 100%
 }

@@ -1,8 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useReducer } from "react";
 import ProductSidebar from "../../components/Main/Shop/ProductSidebar";
 import ProductGallery from "../../components/Main/Shop/ProductGallery";
 
 import CartContext from "../../data/CartContext";
+import ShowcaseContext from "../../data/ShowcaseContext";
 
 import path from "path";
 import fs from "fs/promises";
@@ -11,9 +12,10 @@ import styles from "../../components/Main/Shop/Shop.module.css";
 
 function Shop({ products }) {
 	const cartCtx = useContext(CartContext);
+	const showcaseCtx = useContext(ShowcaseContext);
 
 	const cartInventory = (
-		<p>
+		<p style={{ height: "2rem" }}>
 			{cartCtx.items.map((item) => (
 				<span key={item.title}>
 					{item.title} - {item.amount} ,
@@ -22,20 +24,16 @@ function Shop({ products }) {
 		</p>
 	);
 
+	useEffect(() => {
+		showcaseCtx.setShowcaseDatabase(products);
+		showcaseCtx.resetShowcase(products);
+	}, []);
+
 	return (
-		<>
-			<div>------------------------</div>
-			{cartInventory}
-			<div>
-				<span>Total amount: </span>
-				{cartCtx.totalAmount}
-			</div>
-			<div>------------------------</div>
-			<div className={styles.shopComponent}>
-				<ProductSidebar products={products} />
-				<ProductGallery products={products} />
-			</div>
-		</>
+		<div className={styles.shopComponent}>
+			<ProductSidebar products={products} />
+			<ProductGallery products={products} />
+		</div>
 	);
 }
 
