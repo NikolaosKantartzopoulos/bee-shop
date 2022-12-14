@@ -17,6 +17,7 @@
   height: 4rem;
   font-weight: bold;
   cursor: pointer;
+  position: relative;
 }
 
 .cart:hover {
@@ -27,8 +28,18 @@
 .cart span:nth-child(3) {
   border-radius: 50%;
   background-color: darkorange;
-  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  padding: 0.9rem 0.5rem 0.5rem 0.5rem;
   width: 3rem;
   height: 3rem;
   text-align: center;
+}
+
+.cartDropdown {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  background-color: white;
+  border: 5px double black;
+  color: black;
+  width: 20rem;
 }
