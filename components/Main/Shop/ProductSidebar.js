@@ -60,9 +60,6 @@ function ProductSidebar({ products }) {
 
 	return (
 		<form className={styles.sidebarSection} onSubmit={handleSubmitForm}>
-			<button onClick={() => dispatchInputStateAction({ type: "resetInputs" })}>
-				Clear All
-			</button>
 			<SidebarFrom
 				handleFromSelection={handleFromSelection}
 				inputState={inputState}

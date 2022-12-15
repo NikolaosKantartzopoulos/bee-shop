@@ -10,6 +10,15 @@
 
 .sidebarSection {
   width: clamp(150px, 15%, 200px);
+  padding: 1rem;
+}
+
+.sidebarSection input {
+  max-width: 5rem;
+}
+
+.sidebarSection button {
+  grid-column: 1 /span 2
 }
 
 .ProductGallerySection {

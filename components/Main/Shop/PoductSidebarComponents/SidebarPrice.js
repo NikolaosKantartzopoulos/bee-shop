@@ -1,12 +1,14 @@
 import React from "react";
 
+import styles from "./ProductsSidebarComponents.module.css";
+
 function SidebarPrice({ dispatchInputStateAction, inputState }) {
 	return (
 		<div>
 			<h4>Price</h4>
-			<div>
+			<div id="price-range" className={styles.priceRangeSection}>
 				<label htmlFor="lowerPrice">
-					From:
+					From €
 					<input
 						id="lowerPrice"
 						type="number"
@@ -20,7 +22,7 @@ function SidebarPrice({ dispatchInputStateAction, inputState }) {
 					></input>
 				</label>
 				<label htmlFor="higherPrice">
-					To:
+					To €
 					<input
 						id="higherPrice"
 						value={inputState.higherPrice}

@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 
-import { credentialsReducer } from "../components/Helper/reducerFn";
+import { credentialsReducer } from "../helper/reducerFn";
 
 import styles from "../components/Main/Authentication/Authentication.module.css";
 

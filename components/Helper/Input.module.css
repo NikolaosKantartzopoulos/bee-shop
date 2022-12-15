@@ -1,0 +1,12 @@
+.inputDiv {
+  display: grid;
+  grid-template-columns: 10rem 20rem;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+}
+
+
+.inputDiv>input {
+  height: 1.5rem
+}

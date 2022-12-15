@@ -51,6 +51,10 @@ function Cart() {
 		setOrderSubmited(false);
 	}
 
+	function deleteItemsHandler(item) {
+		cartCtx.removeItem(item);
+	}
+
 	return (
 		<div className={styles.cart} onClick={handleDropdownVisibility}>
 			<Image src={cartSVG} alt="cart" height={30} width={30} />
@@ -70,7 +74,9 @@ function Cart() {
 										<span>
 											{item.title} - {item.amount}
 										</span>
-										<button>Delete</button>
+										<button onClick={() => deleteItemsHandler(item)}>
+											Delete
+										</button>
 									</div>
 								))}
 							</div>

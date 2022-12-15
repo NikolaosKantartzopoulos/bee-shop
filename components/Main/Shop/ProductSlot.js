@@ -26,7 +26,7 @@ function ProductSlot({ product }) {
 			<Image
 				src={product.url}
 				alt="A jar of delicious honey"
-				width={150}
+				width={100}
 				height={150}
 				className={styles.productImage}
 				priority
