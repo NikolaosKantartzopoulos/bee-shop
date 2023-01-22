@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useState } from "react";
 
-import { showcaseReducer } from "../helper/reducerFn";
+import { showcaseReducer } from "../data/reducerFn";
 
 const ShowcaseContext = createContext({
 	itemsShowcased: [],

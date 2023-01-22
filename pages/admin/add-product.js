@@ -1,6 +1,6 @@
 import React from "react";
 
-import AddProductForm from "../../components/Main/AddProduct/AddProductForm";
+import AddProductForm from "../../components/Main/admin/add-product/AddProductForm";
 
 function AddProduct() {
 	return (

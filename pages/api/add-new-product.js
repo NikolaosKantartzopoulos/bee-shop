@@ -1,22 +1,19 @@
-import { MongoClient } from "mongodb";
+import { connectDatabase } from "../../data/db";
 
 export default async function handler(req, res) {
-	if (req.method === "POST") {
-		console.log("---------------connected--------------");
-		const newProduct = {
-			date: new Date().toISOString,
-			...req.body.productInfo,
-		};
-		console.log(newProduct);
-
-		const connectionURL =
-			"mongodb+srv://NikolaosKantartzopoulos:Kalamarakia_1234@cluster0.pvjhsk4.mongodb.net/?retryWrites=true&w=majority";
-
-		const client = await MongoClient.connect(connectionURL);
-		const db = client.db();
-		const result = await db.collection("products").insertOne(newProduct);
-		res.status(200).json({ message: "ok", newProduct: { newProduct } });
-		console.log(result);
+	const [client, db] = await connectDatabase();
+	try {
+		switch (req.method) {
+			case "POST":
+				console.log(req.body);
+				const postRes = await db.collection("products").insertOne(req.body);
+				if (postRes.acknowledged) {
+					res.status(200).json({ type: "ok", text: "Product submited" });
+				} else {
+					res.status(500);
+				}
+		}
+	} finally {
 		client.close();
 	}
 }

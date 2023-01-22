@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useReducer } from "react";
 import ProductSidebar from "../../components/Main/Shop/ProductSidebar";
 import ProductGallery from "../../components/Main/Shop/ProductGallery";
 
-import { connectDatabase, getAllDocuments } from "../../helper/db";
+import { connectDatabase } from "../../data/db";
 
 import CartContext from "../../data/CartContext";
 import ShowcaseContext from "../../data/ShowcaseContext";
@@ -57,18 +57,18 @@ export async function getStaticProps() {
 	// 	});
 	// }
 
-	const client = await connectDatabase();
-	const documents = await getAllDocuments(client, "products");
+	const [client, db] = await connectDatabase();
+	const documents = await db.collection("products").find().toArray();
 
 	const products = documents.map((item) => ({
-		id: `${item._id}`,
+		id: item._id.toString(),
 		size: item.size,
 		title: item.title,
 		from: item.harvestedFrom,
 		price: item.price,
-		url: `${item.url}`,
+		url: item.url,
 	}));
-	console.log(products);
+
 	return {
 		props: { products },
 	};

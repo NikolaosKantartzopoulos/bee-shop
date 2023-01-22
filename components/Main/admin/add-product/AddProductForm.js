@@ -1,10 +1,10 @@
 import React, { useContext, useReducer } from "react";
 
-import { addProductReducer } from "../../../helper/reducerFn";
+import { addProductReducer } from "../../../../data/reducerFn";
 
-import UrlContext from "../../../data/url-context";
+import UrlContext from "../../../../data/url-context";
 
-import styles from "../../Helper/Input.module.css";
+import styles from "../../../Helper/Input.module.css";
 
 function AddProductForm() {
 	const urlContext = useContext(UrlContext);
@@ -15,10 +15,10 @@ function AddProductForm() {
 
 	function submitHandler(e) {
 		e.preventDefault();
-		console.log(productInfo);
+
 		fetch("/api/add-new-product", {
 			method: "POST",
-			body: JSON.stringify({ productInfo: productInfo }),
+			body: JSON.stringify(productInfo),
 			headers: {
 				"Content-Type": "application/json",
 			},

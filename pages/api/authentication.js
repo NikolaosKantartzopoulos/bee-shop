@@ -36,7 +36,6 @@ export default async function hander(req, res) {
 		} else {
 			const result = await db.collection("users").insertOne(newUser);
 			res.status(201).json({ message: "Signed Up!", user: { ...newUser } });
-			console.log(result);
 		}
 		client.close();
 	}

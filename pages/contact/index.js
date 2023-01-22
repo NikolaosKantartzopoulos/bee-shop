@@ -27,7 +27,6 @@ function Contact() {
 	function getEmailsFromNewsletter() {
 		fetch("/api/subscribe")
 			.then((res) => {
-				console.log(res);
 				return res.json();
 			})
 			.then((data) => setSubscritionItems(data.subscriptions));

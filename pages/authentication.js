@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 
-import { credentialsReducer } from "../helper/reducerFn";
+import { credentialsReducer } from "../data/reducerFn";
 
 import styles from "../components/Main/Authentication/Authentication.module.css";
 
@@ -12,7 +12,7 @@ function Authentication() {
 
 	function handleSubscription(e) {
 		e.preventDefault();
-		console.log(credentials);
+
 		fetch("/api/authentication", {
 			method: "POST",
 			body: JSON.stringify({ credentials: credentials }),

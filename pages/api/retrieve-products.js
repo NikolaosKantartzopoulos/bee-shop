@@ -1,11 +1,12 @@
-import { connectDatabase, getAllDocuments } from "../../helper/db";
+import { connectDatabase, getAllDocuments } from "../../data/db";
 
 export default async function handler(req, res) {
 	if (req.method === "GET") {
-		console.log("--------------------------------------");
-		const client = await connectDatabase();
-		const documents = await getAllDocuments(client, "products");
-		console.log(documents);
+		const [client, db] = await connectDatabase();
+		const documents = await db.collection("products").find().toArray();
+
+		client.close();
+
 		res.status(200).json({ documents: documents });
 	}
 }
