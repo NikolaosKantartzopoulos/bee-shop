@@ -6,7 +6,7 @@ import Button from "../UI/Button";
 
 import styles from "./Header.module.css";
 
-import CartContext from "../../data/CartContext";
+import CartContext from "../../data/context/cart-context";
 
 function Cart() {
 	const cartCtx = useContext(CartContext);

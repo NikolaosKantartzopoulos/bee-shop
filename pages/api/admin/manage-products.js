@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { connectDatabase } from "../../../data/db";
+import { connectDatabase } from "../../../data/databaseFunctions";
 
 export default async function handler(req, res) {
 	const [client, db] = await connectDatabase();

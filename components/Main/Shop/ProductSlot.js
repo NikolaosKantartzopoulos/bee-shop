@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 
 import styles from "./ShopGallery.module.css";
 
-import CartContext from "../../../data/CartContext";
+import CartContext from "../../../data/context/cart-context";
 
 function ProductSlot({ product }) {
 	const cartCtx = useContext(CartContext);

@@ -20,7 +20,7 @@
   padding: 1rem;
   background-color: darkred;
   color: white;
-  height: 4rem;
+  height: 3rem;
   font-weight: bold;
   cursor: pointer;
   position: relative;
@@ -34,9 +34,9 @@
 .cart span:nth-child(3) {
   border-radius: 50%;
   background-color: darkorange;
-  padding: 0.6rem 0.5rem 0.5rem 0.5rem;
-  width: 3rem;
-  height: 3rem;
+  padding: 0.4rem 0.5rem 0.5rem 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   text-align: center;
 }
 

@@ -1,5 +1,5 @@
 import React, { useReducer, useContext, useState, useEffect } from "react";
-import ShowcaseContext from "../../../data/ShowcaseContext";
+import ShowcaseContext from "../../../data/context/showcase-context";
 import SidebarFrom from "./PoductSidebarComponents/SidebarFrom";
 import SidebarPrice from "./PoductSidebarComponents/SidebarPrice";
 import SidebarSize from "./PoductSidebarComponents/SidebarSize";

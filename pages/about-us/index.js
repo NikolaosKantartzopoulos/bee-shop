@@ -1,10 +1,10 @@
 import React from "react";
 
-import styles from "./AboutUs.module.css";
-
 import Image from "next/image";
 
 import beekeeperImage from "/public/assets/images/beekeeper.jpg";
+
+import styles from "./AboutUs.module.css";
 
 function AboutUS() {
 	return (

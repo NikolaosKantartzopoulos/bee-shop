@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useState } from "react";
 
-import { showcaseReducer } from "../data/reducerFn";
+import { showcaseReducer } from "../reducers/showcase-reducer";
 
 const ShowcaseContext = createContext({
 	itemsShowcased: [],
@@ -22,6 +22,7 @@ export function ShowcaseContextProvider(props) {
 		itemsShowcased: [],
 	});
 
+	//check
 	function resetShowcase(products) {
 		if (products) {
 			dispatchShowcaseAction({ type: "default", items: products });

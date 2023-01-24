@@ -1,10 +1,10 @@
 import "../styles/globals.css";
 
-import { CartContextProvider } from "../data/CartContext";
-import { ShowcaseContextProvider } from "../data/ShowcaseContext";
-import { URLContextProvider } from "../data/url-context";
+import { CartContextProvider } from "../data/context/cart-context";
+import { ShowcaseContextProvider } from "../data/context/showcase-context";
+import { URLContextProvider } from "../data/context/url-context";
 
-import Layout from "../components/Header/Layout";
+import Layout from "../components/Helper/Layout";
 
 function MyApp({ Component, pageProps }) {
 	return (

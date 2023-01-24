@@ -9,13 +9,11 @@ export async function connectDatabase() {
 }
 
 export async function insertDocument(client, collection, document) {
-	const result = await db.collection(collection).insertOne(document);
-
+	const result = await client.db().collection(collection).insertOne(document);
 	return result;
 }
 
 export async function getAllDocuments(client, collection) {
-	const documents = await db.collection(collection).find().toArray();
-
+	const documents = await client.db().collection(collection).find().toArray();
 	return documents;
 }

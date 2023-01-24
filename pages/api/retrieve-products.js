@@ -1,4 +1,4 @@
-import { connectDatabase, getAllDocuments } from "../../data/db";
+import { connectDatabase, getAllDocuments } from "../../data/databaseFunctions";
 
 export default async function handler(req, res) {
 	if (req.method === "GET") {

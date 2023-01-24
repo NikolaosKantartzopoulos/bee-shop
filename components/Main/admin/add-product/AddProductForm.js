@@ -1,13 +1,12 @@
 import React, { useContext, useReducer } from "react";
-import Button from "../../../UI/Button";
-import { addProductReducer } from "../../../../data/reducerFn";
 
-import UrlContext from "../../../../data/url-context";
+import { addProductReducer } from "../../../../data/reducers/add-product-reducer";
+
+import Button from "../../../UI/Button";
 
 import styles from "../../../Helper/Input.module.css";
 
 function AddProductForm() {
-	const urlContext = useContext(UrlContext);
 	const [productInfo, dispatchProductInfoAction] = useReducer(
 		addProductReducer,
 		{ title: "", harvestedFrom: "", price: 0, size: 1000, url: "" }

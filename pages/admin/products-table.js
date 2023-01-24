@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
-import React, { useContext, useEffect, useReducer, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
-import { connectDatabase } from "../../data/db";
+import { connectDatabase } from "../../data/databaseFunctions";
 
-import ShowcaseContext from "../../data/ShowcaseContext";
+import ShowcaseContext from "../../data/context/showcase-context";
 
 import styles from "./products-table.module.css";
 

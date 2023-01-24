@@ -1,14 +1,11 @@
-import React, { useContext, useEffect, useReducer } from "react";
+import React, { useContext, useEffect } from "react";
 import ProductSidebar from "../../components/Main/Shop/ProductSidebar";
 import ProductGallery from "../../components/Main/Shop/ProductGallery";
 
-import { connectDatabase } from "../../data/db";
+import { connectDatabase } from "../../data/databaseFunctions";
 
-import CartContext from "../../data/CartContext";
-import ShowcaseContext from "../../data/ShowcaseContext";
-
-// import path from "path";
-// import fs from "fs/promises";
+import CartContext from "../../data/context/cart-context";
+import ShowcaseContext from "../../data/context/showcase-context";
 
 import styles from "../../components/Main/Shop/Shop.module.css";
 

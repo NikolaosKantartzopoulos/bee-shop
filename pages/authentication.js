@@ -1,8 +1,7 @@
+import React, { useReducer } from "react";
 import Button from "../components/UI/Button";
 
-import React, { useReducer } from "react";
-
-import { credentialsReducer } from "../data/reducerFn";
+import { credentialsReducer } from "../data/reducers/credentials-reducer";
 
 import styles from "../components/Main/Authentication/Authentication.module.css";
 

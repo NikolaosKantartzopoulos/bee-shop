@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ProductSlot from "./ProductSlot";
 
-import ShowcaseContext from "../../../data/ShowcaseContext";
+import ShowcaseContext from "../../../data/context/showcase-context";
 
 import shopStyles from "./Shop.module.css";
 import styles from "./ShopGallery.module.css";
