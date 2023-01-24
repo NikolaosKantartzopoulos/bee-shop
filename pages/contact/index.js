@@ -1,3 +1,5 @@
+import Button from "../../components/UI/Button";
+
 import React, { useRef, useState } from "react";
 
 import styles from "./Contact.module.css";
@@ -54,10 +56,10 @@ function Contact() {
 					<span>Comments</span>
 					<textarea rows={5} ref={commentsInput} />
 				</div>
-				<button type="submit">Subscribe!</button>
-				<button type="button" onClick={getEmailsFromNewsletter}>
+				<Button type="submit">Subscribe!</Button>
+				<Button type="Button" onClick={getEmailsFromNewsletter}>
 					Get emails!
-				</button>
+				</Button>
 			</form>
 			{items}
 			<div id="contactPage" clasName={styles.contactPage}>

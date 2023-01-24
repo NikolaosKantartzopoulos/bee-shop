@@ -10,7 +10,7 @@ function SidebarFrom({ handleFromSelection, inputState, products }) {
 			>
 				<option key="All">All</option>
 				{products
-					.map((x) => x.from)
+					.map((x) => x.harvestedFrom)
 					.filter((x, i, a) => a.indexOf(x) === i)
 					.sort()
 					.map((product) => (

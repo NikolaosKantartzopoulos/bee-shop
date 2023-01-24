@@ -1,3 +1,5 @@
+import Button from "../components/UI/Button";
+
 import React, { useReducer } from "react";
 
 import { credentialsReducer } from "../data/reducerFn";
@@ -74,7 +76,7 @@ function Authentication() {
 						></input>
 					</label>
 				</div>
-				<button>Subscribe</button>
+				<Button>Subscribe</Button>
 			</form>
 		</div>
 	);

@@ -1,3 +1,4 @@
+import Button from "../../UI/Button";
 import Image from "next/image";
 import React, { useContext } from "react";
 
@@ -8,6 +9,14 @@ import CartContext from "../../../data/CartContext";
 function ProductSlot({ product }) {
 	const cartCtx = useContext(CartContext);
 	const itemAmount = cartCtx.items.find((a) => a.id === product.id);
+
+	let imgSrc;
+	if (product.url) {
+		imgSrc = product.url;
+	} else {
+		imgSrc =
+			"https://images.unsplash.com/photo-1471943311424-646960669fbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80";
+	}
 
 	function handleAddItem() {
 		const itemAdd = { ...product, amount: 1 };
@@ -20,26 +29,39 @@ function ProductSlot({ product }) {
 		cartCtx.removeItem(itemRemove);
 	}
 
+	if (!product) {
+		<p>...Loading</p>;
+	}
+
 	return (
 		<div className={styles.productSlot}>
 			<h2>{product.title}</h2>
-			<Image
-				src={product.url}
-				alt="A jar of delicious honey"
-				width={100}
-				height={150}
-				className={styles.productImage}
-				priority
-			/>
+			<div
+				style={{
+					width: 150,
+					height: 150,
+					position: "relative",
+					margin: "auto",
+				}}
+			>
+				<Image
+					src={imgSrc}
+					alt="A jar of delicious honey"
+					fill
+					className={styles.productImage}
+					priority
+					style={{ overflow: "hidden", objectFit: "cover" }}
+				/>
+			</div>
 			<div id="productInfo" className={styles.info}>
 				<p>
-					{product.from} | {product.size} g | {product.price} €
+					{product.harvestedFrom} | {product.size} g | {product.price} €
 				</p>
 			</div>
 			<div className={styles.quantity}>
-				<button onClick={handleRemoveItem}>-</button>
+				<Button onClick={handleRemoveItem}>-</Button>
 				<div>{itemAmount ? itemAmount.amount : 0}</div>
-				<button onClick={handleAddItem}>+</button>
+				<Button onClick={handleAddItem}>+</Button>
 			</div>
 		</div>
 	);

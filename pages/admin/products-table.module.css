@@ -1,0 +1,66 @@
+.productsTable td,
+.productsTable th {
+  border: 1px solid black;
+  padding: 4px 8px;
+  height: 2rem;
+}
+
+
+
+.productsTable input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.productsTable th:nth-child(3),
+.productsTable td:nth-child(3),
+.productsTable th:nth-child(4),
+.productsTable td:nth-child(4) {
+  width: 4rem;
+  text-align: center;
+
+}
+
+.productsTable th:nth-child(1),
+.productsTable th:nth-child(2),
+.productsTable td:nth-child(1) .productsTable td:nth-child(2) {
+  min-width: 10rem;
+
+}
+
+.productsTable input {
+  max-width: 6rem;
+}
+
+.productsTable tr:nth-child(even) {
+  background: #CCC
+}
+
+.productsTable tr:nth-child(odd) {
+  background: #FFF
+}
+
+.interactiveItemEdit,
+.interactiveItemDelete {
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+
+.interactiveItemEdit:hover {
+  transition: all 0.15s;
+  background-color: rgba(0, 0, 200, 0.2)
+}
+
+
+
+.interactiveItemDelete:hover {
+  transition: all 0.15s;
+  background-color: rgba(255, 0, 0, 0.2)
+}
+
+.productsTable th {
+  background-color: darkred;
+  color: white;
+}

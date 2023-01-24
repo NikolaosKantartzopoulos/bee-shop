@@ -3,7 +3,7 @@ import ShowcaseContext from "../../../data/ShowcaseContext";
 import SidebarFrom from "./PoductSidebarComponents/SidebarFrom";
 import SidebarPrice from "./PoductSidebarComponents/SidebarPrice";
 import SidebarSize from "./PoductSidebarComponents/SidebarSize";
-
+import Button from "../../UI/Button";
 import styles from "./Shop.module.css";
 
 function inputStateReducer(state, action) {
@@ -29,7 +29,7 @@ function inputStateReducer(state, action) {
 	}
 }
 
-function ProductSidebar({ products }) {
+function ProductSidebar() {
 	const showcaseCtx = useContext(ShowcaseContext);
 
 	const [inputState, dispatchInputStateAction] = useReducer(inputStateReducer, {
@@ -63,7 +63,7 @@ function ProductSidebar({ products }) {
 			<SidebarFrom
 				handleFromSelection={handleFromSelection}
 				inputState={inputState}
-				products={products}
+				products={showcaseCtx.showcaseDatabase}
 			/>
 			<SidebarPrice
 				dispatchInputStateAction={dispatchInputStateAction}
@@ -74,10 +74,10 @@ function ProductSidebar({ products }) {
 				inputState={inputState}
 			/>
 			<h3>Search!</h3>
-			<button onClick={() => dispatchInputStateAction({ type: "resetInputs" })}>
+			<Button onClick={() => dispatchInputStateAction({ type: "resetInputs" })}>
 				Clear All
-			</button>
-			<button type="submit">Submit</button>
+			</Button>
+			<Button type="submit">Submit</Button>
 		</form>
 	);
 }

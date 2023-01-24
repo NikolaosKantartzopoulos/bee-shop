@@ -17,7 +17,7 @@
   max-width: 5rem;
 }
 
-.sidebarSection button {
+.sidebarSection Button {
   grid-column: 1 /span 2
 }
 

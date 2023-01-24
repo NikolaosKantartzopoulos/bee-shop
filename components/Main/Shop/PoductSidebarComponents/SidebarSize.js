@@ -1,3 +1,5 @@
+import Button from "../../../UI/Button";
+
 import React from "react";
 
 import styles from "./ProductsSidebarComponents.module.css";
@@ -35,7 +37,7 @@ function SidebarSize({ dispatchInputStateAction, inputState }) {
 						}
 					></input>
 				</label>
-				<button
+				<Button
 					onClick={() => {
 						dispatchInputStateAction({
 							type: "setSizeLowest",
@@ -48,7 +50,7 @@ function SidebarSize({ dispatchInputStateAction, inputState }) {
 					}}
 				>
 					Reset Volumes
-				</button>
+				</Button>
 			</div>
 		</div>
 	);

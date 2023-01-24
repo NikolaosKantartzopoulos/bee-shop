@@ -5,7 +5,6 @@ export default async function handler(req, res) {
 	try {
 		switch (req.method) {
 			case "POST":
-				console.log(req.body);
 				const postRes = await db.collection("products").insertOne(req.body);
 				if (postRes.acknowledged) {
 					res.status(200).json({ type: "ok", text: "Product submited" });

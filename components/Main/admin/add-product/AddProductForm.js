@@ -1,5 +1,5 @@
 import React, { useContext, useReducer } from "react";
-
+import Button from "../../../UI/Button";
 import { addProductReducer } from "../../../../data/reducerFn";
 
 import UrlContext from "../../../../data/url-context";
@@ -99,7 +99,7 @@ function AddProductForm() {
 					}
 				></input>
 			</div>
-			<button>Add new product</button>
+			<Button>Add new product</Button>
 		</form>
 	);
 }

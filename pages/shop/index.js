@@ -12,7 +12,7 @@ import ShowcaseContext from "../../data/ShowcaseContext";
 
 import styles from "../../components/Main/Shop/Shop.module.css";
 
-function Shop({ products }) {
+function Shop({ allProducts }) {
 	const cartCtx = useContext(CartContext);
 	const showcaseCtx = useContext(ShowcaseContext);
 
@@ -27,50 +27,25 @@ function Shop({ products }) {
 	);
 
 	useEffect(() => {
-		showcaseCtx.setShowcaseDatabase(products);
-		showcaseCtx.resetShowcase(products);
+		showcaseCtx.setShowcaseDatabase(allProducts);
+		showcaseCtx.resetShowcase(allProducts);
 	}, []);
 
 	return (
 		<div className={styles.shopComponent}>
-			<ProductSidebar products={products} />
-			<ProductGallery products={products} />
+			<ProductSidebar />
+			<ProductGallery />
 		</div>
 	);
 }
 
 export async function getStaticProps() {
-	// const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
-	// const jsonData = await fs.readFile(filePath);
-	// const data = JSON.parse(jsonData);
-
-	// let products = [];
-	// let loadedProducts = data.products;
-	// for (let key in loadedProducts) {
-	// 	products.push({
-	// 		title: key,
-	// 		id: loadedProducts[key].id,
-	// 		from: loadedProducts[key].from,
-	// 		price: loadedProducts[key].price,
-	// 		size: loadedProducts[key].size,
-	// 		url: loadedProducts[key].url,
-	// 	});
-	// }
-
 	const [client, db] = await connectDatabase();
 	const documents = await db.collection("products").find().toArray();
 
-	const products = documents.map((item) => ({
-		id: item._id.toString(),
-		size: item.size,
-		title: item.title,
-		from: item.harvestedFrom,
-		price: item.price,
-		url: item.url,
-	}));
-
+	const allProducts = documents.map((p) => ({ ...p, _id: p._id.toString() }));
 	return {
-		props: { products },
+		props: { allProducts },
 	};
 }
 

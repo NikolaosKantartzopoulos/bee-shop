@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useContext, useState } from "react";
 
 import cartSVG from "../../public/assets/images/cart.svg";
+import Button from "../UI/Button";
 
 import styles from "./Header.module.css";
 
@@ -74,21 +75,21 @@ function Cart() {
 										<span>
 											{item.title} - {item.amount}
 										</span>
-										<button onClick={() => deleteItemsHandler(item)}>
+										<Button onClick={() => deleteItemsHandler(item)}>
 											Delete
-										</button>
+										</Button>
 									</div>
 								))}
 							</div>
 							{!orderSubmited && (
-								<button onClick={handleOrder}>Submit order!</button>
+								<Button onClick={handleOrder}>Submit order!</Button>
 							)}
 						</>
 					)}
 					{orderSubmited && (
 						<>
 							<p>Order confirmed!</p>
-							<button onClick={resetShopUI}>New Order!</button>
+							<Button onClick={resetShopUI}>New Order!</Button>
 						</>
 					)}
 					{!orderSubmited && cartCtx.items.length === 0 && (
