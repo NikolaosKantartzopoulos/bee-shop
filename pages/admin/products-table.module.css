@@ -5,7 +5,9 @@
   height: 2rem;
 }
 
-
+.productsTable thead {
+  color: var(--light-main-1);
+}
 
 .productsTable input {
   width: 100%;
@@ -34,11 +36,11 @@
 }
 
 .productsTable tr:nth-child(even) {
-  background: #CCC
+  background: var(--light-main-1)
 }
 
 .productsTable tr:nth-child(odd) {
-  background: #FFF
+  background: var(--light-main-2)
 }
 
 .interactiveItemEdit,
@@ -61,6 +63,6 @@
 }
 
 .productsTable th {
-  background-color: darkred;
-  color: white;
+  background-color: var(--dark-main-1);
+  color: var(--light0main-1);
 }

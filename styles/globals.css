@@ -1,27 +1,14 @@
 * {
 
-  --main-dark-900: darkred;
-  --main-dark-500: rgb(196, 0, 0);
-  --main-light: white;
-  --secondary-dark: orange;
-  --secondary-light: rgb(255, 189, 65);
+  --dark-main-1: darkred;
+  --dark-main-2: rgb(196, 0, 0);
+  --light-main-1: white;
+  --light-main-2: #ddd;
+  --support-dark-1: darkorange;
+  --support-dark-2: orange;
+  --support-light-1: rgb(255, 189, 65);
+  --black: black
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 html,
 body {
@@ -46,7 +33,7 @@ a {
   }
 
   body {
-    color: white;
+    color: var(--light-main-1);
     background: black;
   }
 }

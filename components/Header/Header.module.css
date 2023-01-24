@@ -4,8 +4,8 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  background-color: var(--main-dark-900);
-  color: var(--main-light);
+  background-color: var(--dark-main-1);
+  color: var(--light-main-1);
 }
 
 
@@ -18,8 +18,8 @@
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
-  background-color: darkred;
-  color: white;
+  background-color: var(--dark-main-1);
+  color: var(--light-main-1);
   height: 3rem;
   font-weight: bold;
   cursor: pointer;
@@ -27,13 +27,13 @@
 }
 
 .cart:hover {
-  background-color: var(--main-dark-500);
+  background-color: var(--dark-main-2);
 }
 
 
 .cart span:nth-child(3) {
   border-radius: 50%;
-  background-color: darkorange;
+  background-color: var(--support-dark-1);
   padding: 0.4rem 0.5rem 0.5rem 0.5rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -44,8 +44,8 @@
   position: absolute;
   top: 5rem;
   right: 1rem;
-  background-color: white;
-  border: 5px double black;
-  color: black;
+  background-color: var(--light-main-1);
+  border: 5px double var(--black);
+  color: var(--black);
   width: 20rem;
 }
