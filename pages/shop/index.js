@@ -1,4 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
+
+import Image from "next/image";
+
 import ProductSidebar from "../../components/Main/Shop/ProductSidebar";
 import ProductGallery from "../../components/Main/Shop/ProductGallery";
 
@@ -7,15 +10,19 @@ import { connectDatabase } from "../../data/databaseFunctions";
 import CartContext from "../../data/context/cart-context";
 import ShowcaseContext from "../../data/context/showcase-context";
 
+import SearchIcon from "../../public/assets/images/search.svg";
+
 import styles from "../../components/Main/Shop/Shop.module.css";
 
 function Shop({ allProducts }) {
 	const cartCtx = useContext(CartContext);
 	const showcaseCtx = useContext(ShowcaseContext);
 
+	const [sidebarVisible, setSidebarVisible] = useState(false);
+
 	const cartInventory = (
 		<p style={{ height: "2rem" }}>
-			{cartCtx.items.map((item) => (
+			{cartCtx.cartState.items.map((item) => (
 				<span key={item.title}>
 					{item.title} - {item.amount} ,
 				</span>
@@ -30,7 +37,16 @@ function Shop({ allProducts }) {
 
 	return (
 		<div className={styles.shopComponent}>
-			<ProductSidebar />
+			<Image
+				src={SearchIcon}
+				alt="Search Products"
+				className={styles.searchImage}
+				onClick={() => setSidebarVisible(!sidebarVisible)}
+			/>
+			<ProductSidebar
+				sidebarVisible={sidebarVisible}
+				setSidebarVisible={setSidebarVisible}
+			/>
 			<ProductGallery />
 		</div>
 	);

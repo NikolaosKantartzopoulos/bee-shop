@@ -3,12 +3,20 @@ import React from "react";
 import Image from "next/image";
 
 import beekeeperImage from "/public/assets/images/beekeeper.jpg";
+import aboutImage from "/public/assets/images/bee2BG.jpg";
 
 import styles from "./AboutUs.module.css";
 
 function AboutUS() {
 	return (
 		<div className={styles.aboutUsSection}>
+			<Image
+				src={aboutImage}
+				alt="Bee!"
+				className={styles.bgImage}
+				fill
+				priority
+			/>
 			<div id="twoWords" className={styles.twoWords}>
 				<div id="profile" className={styles.profile}>
 					<h3>PROFILE</h3>

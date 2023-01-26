@@ -1,29 +1,53 @@
 .aboutUsSection {
-  max-width: 90%;
+  position: relative;
+}
+
+.bgImage {
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@media screen and (min-width: 700px) {
+
+  .twoWords {
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    position: relative;
+    height: 100vh;
+  }
+
+
+
+  .profile {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    right: 50vw;
+    text-align: justify
+  }
+
+  .ourMission {
+    position: absolute;
+    top: 60vh;
+    left: 45vw;
+    right: 5vw;
+    text-align: justify
+  }
 }
 
 .twoWords {
-  display: grid;
-  grid-template-columns: 0.6fr 0.4fr;
-  position: relative;
-  height: 100vh;
+  display: block;
 }
 
 .profile {
-  position: absolute;
-  top: 5vh;
-  left: 5vw;
-  right: 50vw;
-  text-align: justify
+  display: block;
 }
 
 .ourMission {
-  position: absolute;
-  top: 60vh;
-  left: 45vw;
-  right: 5vw;
-  text-align: justify
+  display: block
 }
+
 
 .smallBio,
 .someWords {

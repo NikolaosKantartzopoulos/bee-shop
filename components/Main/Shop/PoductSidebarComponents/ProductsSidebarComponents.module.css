@@ -1,6 +1,68 @@
+.sidebarSection>section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px
+}
+
+
+.sidebarSection>section>h4 {
+
+  margin-bottom: 4px;
+
+}
+
+.sidebarSection input {
+  max-width: 4rem;
+}
+
+.sidebarSection>section Button {
+  grid-column: 1 / span 2;
+  margin: 4px auto;
+  font-size: .9rem;
+}
+
 .priceRangeSection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   max-width: 100%;
+  text-align: center;
+}
+
+.sidebarSection {
+  width: clamp(160px, 15%, 320px);
+  padding: 1rem;
+  margin-top: 4rem;
+  position: absolute;
+  z-index: 5;
+  background-color: white;
+
+}
+
+.sidebarHidden {
+  transition: all 0.15s ease-in-out;
+  transform: translateX(-100%);
+  box-shadow: 0 0 0 0 black;
+}
+
+
+.sidebarVisible {
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 0 5px 5px black;
+}
+
+.controlButtonsDiv {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2px;
+}
+
+.controlButtonsDiv button {
+  margin: 4px auto;
+  font-size: .9rem;
+  width: 4rem;
 
 }

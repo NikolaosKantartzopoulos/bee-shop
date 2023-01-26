@@ -6,7 +6,7 @@ import styles from "./ProductsSidebarComponents.module.css";
 
 function SidebarPrice({ dispatchInputStateAction, inputState }) {
 	return (
-		<div>
+		<section>
 			<h4>Price</h4>
 			<div id="price-range" className={styles.priceRangeSection}>
 				<label htmlFor="lowerPrice">
@@ -52,7 +52,7 @@ function SidebarPrice({ dispatchInputStateAction, inputState }) {
 					Reset Prices
 				</Button>
 			</div>
-		</div>
+		</section>
 	);
 }
 

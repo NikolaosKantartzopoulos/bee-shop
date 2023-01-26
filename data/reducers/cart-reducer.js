@@ -1,48 +1,46 @@
 export function cartReducer(state, action) {
-	let shouldReplace = false;
 	switch (action.type) {
 		case "ADD":
-			const newState = state.items.map((item) => {
-				if (item.id === action.item.id) {
-					shouldReplace = true;
-					const updatedAmount = item.amount + action.item.amount;
-					return { ...item, amount: updatedAmount };
-				}
-				return item;
-			});
-
-			const updatedTotalAmount =
-				state.totalAmount + action.item.price * action.item.amount;
-
-			if (shouldReplace) {
-				return { items: newState, totalAmount: updatedTotalAmount };
+			let distinctItemIds = state.items.map((i) => i._id);
+			if (!distinctItemIds.includes(action.item._id)) {
+				return {
+					items: [...state.items, { ...action.item, numberOfItems: 1 }],
+					totalCost: Number(state.totalCost) + Number(action.item.price),
+				};
 			} else {
-				const updatedItems = [...state.items, action.item];
-				return { items: updatedItems, totalAmount: updatedTotalAmount };
+				let editThisItem = state.items.find((i) => i._id == action.item._id);
+				return {
+					items: [
+						...state.items.filter((i) => i._id != action.item._id),
+						{ ...editThisItem, numberOfItems: editThisItem.numberOfItems + 1 },
+					],
+					totalCost: Number(state.totalCost) + Number(editThisItem.price),
+				};
 			}
+			break;
 		case "REMOVE":
-			let shouldEraseItem = false;
-			let overkillBy = 0;
-			const removeState = state.items.map((item) => {
-				if (item.id === action.item.id) {
-					shouldReplace = true;
-					const updatedAmount = item.amount - action.item.amount;
-					if (updatedAmount <= 0) {
-						shouldReplace = false;
-					}
-					return { ...item, amount: updatedAmount };
-				}
-				return item;
-			});
-
-			const updatedDecreasedAmount =
-				state.totalAmount - action.item.price * action.item.amount;
-
-			if (shouldReplace) {
-				return { items: removeState, totalAmount: updatedDecreasedAmount };
+			let selectedItemInCart = state.items.find(
+				(i) => i._id == action.item._id
+			);
+			let filteredItems = [
+				...state.items.filter((i) => i._id != action.item._id),
+			];
+			if (selectedItemInCart.numberOfItems == 1) {
+				return {
+					items: filteredItems,
+					totalCost: Number(state.totalCost) - Number(selectedItemInCart.price),
+				};
 			} else {
-				const updatedItems = state.items.filter((a) => a.id !== action.item.id);
-				return { items: updatedItems, totalAmount: updatedDecreasedAmount };
+				return {
+					items: [
+						...filteredItems,
+						{
+							...selectedItemInCart,
+							numberOfItems: selectedItemInCart.numberOfItems - 1,
+						},
+					],
+					totalCost: Number(state.totalCost) - Number(selectedItemInCart.price),
+				};
 			}
 		case "EMPTY":
 			return defaultCartState;
@@ -51,5 +49,5 @@ export function cartReducer(state, action) {
 
 export const defaultCartState = {
 	items: [],
-	totalAmount: 0,
+	totalCost: 0,
 };

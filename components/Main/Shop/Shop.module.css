@@ -1,26 +1,28 @@
 .shopComponent {
-  display: grid;
-  grid-template-columns: 200px calc(100% - 200px - 1rem);
+  display: flex;
+  flex-direction: row;
+  margin: 1rem auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: center;
   gap: 1rem;
-  margin: auto;
-  width: 100%;
-  justify-content: space-around;
-  align-items: start;
 }
 
-.sidebarSection {
-  width: clamp(150px, 15%, 200px);
-  padding: 1rem;
-}
 
-.sidebarSection input {
-  max-width: 5rem;
-}
 
-.sidebarSection Button {
-  grid-column: 1 /span 2
-}
+
 
 .ProductGallerySection {
-  width: 100%
+  width: 100%;
+}
+
+.searchImage {
+  position: absolute;
+  cursor: pointer;
+  margin: 4px;
+  z-index: 15;
+}
+
+.searchImage:hover {
+  scale: 1.1;
 }

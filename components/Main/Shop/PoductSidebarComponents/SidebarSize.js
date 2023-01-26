@@ -6,7 +6,7 @@ import styles from "./ProductsSidebarComponents.module.css";
 
 function SidebarSize({ dispatchInputStateAction, inputState }) {
 	return (
-		<div>
+		<section>
 			<h4>Size</h4>
 			<div className={styles.priceRangeSection}>
 				<label htmlFor="sizeLowest">
@@ -52,7 +52,7 @@ function SidebarSize({ dispatchInputStateAction, inputState }) {
 					Reset Volumes
 				</Button>
 			</div>
-		</div>
+		</section>
 	);
 }
 

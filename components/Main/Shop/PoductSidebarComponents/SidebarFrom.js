@@ -2,8 +2,8 @@ import React from "react";
 
 function SidebarFrom({ handleFromSelection, inputState, products }) {
 	return (
-		<div>
-			<h4>Harvested from:</h4>
+		<section>
+			<h4>Harvested from</h4>
 			<select
 				onChange={(e) => handleFromSelection(e)}
 				value={inputState.selectedFrom}
@@ -19,7 +19,7 @@ function SidebarFrom({ handleFromSelection, inputState, products }) {
 						</option>
 					))}
 			</select>
-		</div>
+		</section>
 	);
 }
 

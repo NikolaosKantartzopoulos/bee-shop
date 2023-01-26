@@ -8,7 +8,10 @@ import CartContext from "../../../data/context/cart-context";
 
 function ProductSlot({ product }) {
 	const cartCtx = useContext(CartContext);
-	const itemAmount = cartCtx.items.find((a) => a.id === product.id);
+
+	const itemInCart = cartCtx.cartState.items.find(
+		(pr) => pr._id === product._id
+	);
 
 	let imgSrc;
 	if (product.url) {
@@ -19,14 +22,12 @@ function ProductSlot({ product }) {
 	}
 
 	function handleAddItem() {
-		const itemAdd = { ...product, amount: 1 };
-		cartCtx.addItem(itemAdd);
+		cartCtx.addItem(product);
 	}
 
 	function handleRemoveItem() {
-		if (!itemAmount || itemAmount.amount == 0) return;
-		const itemRemove = { ...product, amount: 1 };
-		cartCtx.removeItem(itemRemove);
+		if (!itemInCart || itemInCart.numberOfItems == 0) return;
+		cartCtx.removeItem(product);
 	}
 
 	if (!product) {
@@ -60,7 +61,7 @@ function ProductSlot({ product }) {
 			</div>
 			<div className={styles.quantity}>
 				<Button onClick={handleRemoveItem}>-</Button>
-				<div>{itemAmount ? itemAmount.amount : 0}</div>
+				<div>{itemInCart ? itemInCart.numberOfItems : 0}</div>
 				<Button onClick={handleAddItem}>+</Button>
 			</div>
 		</div>

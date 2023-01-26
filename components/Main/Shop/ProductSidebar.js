@@ -4,7 +4,7 @@ import SidebarFrom from "./PoductSidebarComponents/SidebarFrom";
 import SidebarPrice from "./PoductSidebarComponents/SidebarPrice";
 import SidebarSize from "./PoductSidebarComponents/SidebarSize";
 import Button from "../../UI/Button";
-import styles from "./Shop.module.css";
+import styles from "./PoductSidebarComponents/ProductsSidebarComponents.module.css";
 
 function inputStateReducer(state, action) {
 	switch (action.type) {
@@ -29,7 +29,7 @@ function inputStateReducer(state, action) {
 	}
 }
 
-function ProductSidebar() {
+function ProductSidebar({ sidebarVisible, setSidebarVisible }) {
 	const showcaseCtx = useContext(ShowcaseContext);
 
 	const [inputState, dispatchInputStateAction] = useReducer(inputStateReducer, {
@@ -59,7 +59,12 @@ function ProductSidebar() {
 	}
 
 	return (
-		<form className={styles.sidebarSection} onSubmit={handleSubmitForm}>
+		<form
+			className={`${styles.sidebarSection} ${
+				sidebarVisible ? styles.sidebarVisible : styles.sidebarHidden
+			}`}
+			onSubmit={handleSubmitForm}
+		>
 			<SidebarFrom
 				handleFromSelection={handleFromSelection}
 				inputState={inputState}
@@ -73,11 +78,14 @@ function ProductSidebar() {
 				dispatchInputStateAction={dispatchInputStateAction}
 				inputState={inputState}
 			/>
-			<h3>Search!</h3>
-			<Button onClick={() => dispatchInputStateAction({ type: "resetInputs" })}>
-				Clear All
-			</Button>
-			<Button type="submit">Submit</Button>
+			<div className={styles.controlButtonsDiv}>
+				<Button
+					onClick={() => dispatchInputStateAction({ type: "resetInputs" })}
+				>
+					Clear
+				</Button>
+				<Button type="submit">Search</Button>
+			</div>
 		</form>
 	);
 }

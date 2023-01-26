@@ -6,7 +6,7 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
-	const [adminTabVisible, setAdminTabVisible] = useState(true);
+	const [adminTabVisible, setAdminTabVisible] = useState(false);
 	const router = useRouter();
 	return (
 		<nav className={styles.mainNavbar}>

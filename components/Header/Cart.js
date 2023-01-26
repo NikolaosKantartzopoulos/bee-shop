@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import cartSVG from "../../public/assets/images/cart.svg";
 import Button from "../UI/Button";
@@ -56,10 +56,14 @@ function Cart() {
 		cartCtx.removeItem(item);
 	}
 
+	useEffect(() => {
+		console.log(cartCtx.items);
+	}, [cartCtx.items]);
+
 	return (
 		<div className={styles.cart} onClick={handleDropdownVisibility}>
 			<Image src={cartSVG} alt="cart" height={30} width={30} />
-			<span>{cartCtx.totalAmount} €</span>
+			<span>{cartCtx.cartState ? cartCtx.cartState.totalCost : 0} €</span>
 			<span>{cartCtx.getAmountOfItemsInCart()}</span>
 			{dropdownVisible && (
 				<div
@@ -67,14 +71,13 @@ function Cart() {
 					className={styles.cartDropdown}
 					onClick={(e) => e.stopPropagation()}
 				>
-					{cartCtx.items.length !== 0 && (
+					{cartCtx.cartState.items.length !== 0 && (
 						<>
 							<div>
-								{cartCtx.items.map((item) => (
-									<div>
-										<span>
-											{item.title} - {item.amount}
-										</span>
+								{cartCtx.cartState.items.map((item) => (
+									<div className={styles.itemRow}>
+										<span>{item.title}</span>
+										<span>{item.numberOfItems}</span>
 										<Button onClick={() => deleteItemsHandler(item)}>
 											Delete
 										</Button>
@@ -92,8 +95,8 @@ function Cart() {
 							<Button onClick={resetShopUI}>New Order!</Button>
 						</>
 					)}
-					{!orderSubmited && cartCtx.items.length === 0 && (
-						<h1>Cart is Empty!</h1>
+					{!orderSubmited && cartCtx.cartState.items.length === 0 && (
+						<p>Cart is Empty!</p>
 					)}
 				</div>
 			)}

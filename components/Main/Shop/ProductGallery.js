@@ -24,7 +24,6 @@ function ProductGallery() {
 			className={shopStyles.ProductGallerySection}
 			id="productGallerySection"
 		>
-			<h3>ProductGallery</h3>
 			{allProducts}
 		</div>
 	);

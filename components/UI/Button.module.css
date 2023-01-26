@@ -1,1 +1,20 @@
-.myButton {}
+.myButton {
+  transition: all 0.1s;
+  cursor: pointer;
+  background-color: var(--light-main-2);
+  color: var(--black);
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 16px;
+}
+
+.myButton:hover {
+  transition: all 0.1s;
+  background-color: var(--light-main-1);
+}
+
+.myButton:active {
+  transition: all 5ms;
+  background-color: var(--dark-main-1);
+  transform: translateY(2px);
+}

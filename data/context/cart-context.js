@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from "react";
 import { cartReducer, defaultCartState } from "../reducers/cart-reducer";
 
 const CartContext = createContext({
-	items: [],
+	cartState: {},
 	totalAmount: 0,
 	addItem: (item) => {},
 	removeItem: (item) => {},
@@ -17,6 +17,7 @@ export function CartContextProvider(props) {
 	);
 
 	function addItemToCartHandler(item) {
+		// console.log(item);
 		dispatchCartAction({
 			type: "ADD",
 			item: item,
@@ -32,7 +33,7 @@ export function CartContextProvider(props) {
 
 	function getAmountOfItemsInCart() {
 		return cartState.items.reduce(
-			(accumulator, item) => accumulator + item.amount,
+			(accumulator, item) => accumulator + item.numberOfItems,
 			0
 		);
 	}
@@ -44,8 +45,7 @@ export function CartContextProvider(props) {
 	}
 
 	const cartContext = {
-		items: cartState.items,
-		totalAmount: cartState.totalAmount,
+		cartState: cartState,
 		addItem: addItemToCartHandler,
 		removeItem: removeItemFromCartHandler,
 		getAmountOfItemsInCart: getAmountOfItemsInCart,
