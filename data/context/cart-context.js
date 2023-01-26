@@ -17,7 +17,6 @@ export function CartContextProvider(props) {
 	);
 
 	function addItemToCartHandler(item) {
-		// console.log(item);
 		dispatchCartAction({
 			type: "ADD",
 			item: item,

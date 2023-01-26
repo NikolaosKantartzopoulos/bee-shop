@@ -1,0 +1,11 @@
+.addProductForm {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}

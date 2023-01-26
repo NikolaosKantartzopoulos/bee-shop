@@ -20,9 +20,7 @@ function Authentication() {
 			headers: {
 				"Content-Type": "application/json",
 			},
-		})
-			.then((res) => res.json())
-			.then((data) => console.log(data));
+		}).then((res) => res.json());
 	}
 	return (
 		<div>

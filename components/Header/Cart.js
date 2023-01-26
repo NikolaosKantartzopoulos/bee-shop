@@ -38,14 +38,12 @@ function Cart() {
 			headers: {
 				"Content-Type": "application/json",
 			},
-		})
-			.then((res) => {
-				if (res.ok) {
-					setOrderSubmited(true);
-				}
-				return res.json();
-			})
-			.then((data) => console.log(data));
+		}).then((res) => {
+			if (res.ok) {
+				setOrderSubmited(true);
+			}
+			return res.json();
+		});
 	}
 
 	function resetShopUI() {
@@ -55,10 +53,6 @@ function Cart() {
 	function deleteItemsHandler(item) {
 		cartCtx.removeItem(item);
 	}
-
-	useEffect(() => {
-		console.log(cartCtx.items);
-	}, [cartCtx.items]);
 
 	return (
 		<div className={styles.cart} onClick={handleDropdownVisibility}>

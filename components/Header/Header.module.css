@@ -1,6 +1,6 @@
 .headerStyles {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 1fr 200px 64px;
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;

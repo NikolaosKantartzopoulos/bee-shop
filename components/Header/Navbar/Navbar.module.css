@@ -54,7 +54,7 @@
   transform: translateX(-12px);
   transition: all 0.15s;
   opacity: 0;
-  cursor: none;
+  pointer-events: none;
 }
 
 
@@ -76,7 +76,7 @@
   transition: all 0.15s;
   opacity: 1;
   cursor: pointer;
-
+  pointer-events: all;
 }
 
 

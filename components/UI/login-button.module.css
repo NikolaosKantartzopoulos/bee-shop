@@ -1,0 +1,43 @@
+.accountControlDiv {
+  position: relative
+}
+
+.accountControlDiv img {
+  cursor: pointer;
+}
+
+.dropdownDiv {
+  position: absolute;
+  background-color: var(--dark-main-1);
+  border: 3px double var(--light-main-1);
+  right: 0;
+  min-width: 16rem;
+  box-shadow: 0 3px 3px 3px black;
+  min-height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.signupDiv {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupDiv button {
+  width: 50%;
+  margin-top: 0.5rem;
+}
+
+.signupRow {
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 4px 8px;
+}

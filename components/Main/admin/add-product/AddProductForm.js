@@ -5,6 +5,7 @@ import { addProductReducer } from "../../../../data/reducers/add-product-reducer
 import Button from "../../../UI/Button";
 
 import styles from "../../../Helper/Input.module.css";
+import divStyles from "./AddProductForm.module.css";
 
 function AddProductForm() {
 	const [productInfo, dispatchProductInfoAction] = useReducer(
@@ -21,13 +22,11 @@ function AddProductForm() {
 			headers: {
 				"Content-Type": "application/json",
 			},
-		})
-			.then((res) => res.json())
-			.then((data) => console.log(data));
+		}).then((res) => res.json());
 	}
 
 	return (
-		<form onSubmit={submitHandler}>
+		<form onSubmit={submitHandler} className={divStyles.addProductForm}>
 			<div className={styles.inputDiv}>
 				<label htmlFor="title">Title</label>
 				<input
