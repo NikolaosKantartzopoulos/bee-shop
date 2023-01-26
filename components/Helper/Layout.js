@@ -7,15 +7,17 @@ export default function Layout({ children }) {
 	const toolsCtx = useContext(ToolsContext);
 	return (
 		<>
-			<div
-				style={{
-					position: "absolute",
-					width: "100vw",
-					height: "100vh",
-					zIndex: 3,
-				}}
-				onClick={() => toolsCtx.setDropdownOpen("")}
-			/>
+			{toolsCtx.dropdownOpen && (
+				<div
+					style={{
+						position: "absolute",
+						width: "100vw",
+						height: "100vh",
+						zIndex: 3,
+					}}
+					onClick={() => toolsCtx.setDropdownOpen("")}
+				/>
+			)}
 			<div style={{ minHeight: "100vh", position: "relative" }}>
 				<Header />
 				<main style={{ paddingBottom: "2.5rem" }}>{children}</main>
