@@ -20,7 +20,10 @@
   position: absolute;
   cursor: pointer;
   margin: 4px;
-  z-index: 15;
+  z-index: 10;
+  background-color: var(--dark-main-1);
+  border-radius: 50%;
+  top: 3.5rem;
 }
 
 .searchImage:hover {

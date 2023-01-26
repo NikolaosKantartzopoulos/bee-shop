@@ -31,6 +31,9 @@
   background-color: var(--dark-main-2);
 }
 
+.cart p {
+  text-align: center;
+}
 
 .cart span:nth-child(3) {
   border-radius: 50%;
@@ -49,6 +52,10 @@
   border: 5px double var(--black);
   color: var(--black);
   width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px;
 }
 
 .itemRow {
@@ -58,4 +65,8 @@
   align-items: center;
   font-size: 1.2rem;
   gap: 4px
+}
+
+.twoColumnsItem {
+  background-color: red;
 }

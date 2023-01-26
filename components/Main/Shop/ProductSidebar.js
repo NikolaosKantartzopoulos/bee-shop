@@ -41,6 +41,7 @@ function ProductSidebar({ sidebarVisible, setSidebarVisible }) {
 	});
 
 	function handleFromSelection(e) {
+		console.log(e.target.value);
 		dispatchInputStateAction({
 			type: "setFrom",
 			fromInputValue: e.target.value,
@@ -79,11 +80,7 @@ function ProductSidebar({ sidebarVisible, setSidebarVisible }) {
 				inputState={inputState}
 			/>
 			<div className={styles.controlButtonsDiv}>
-				<Button
-					onClick={() => dispatchInputStateAction({ type: "resetInputs" })}
-				>
-					Clear
-				</Button>
+				<Button onClick={() => showcaseCtx.resetShowcase()}>Clear</Button>
 				<Button type="submit">Search</Button>
 			</div>
 		</form>

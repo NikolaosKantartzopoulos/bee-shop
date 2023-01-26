@@ -79,7 +79,9 @@ function Cart() {
 								))}
 							</div>
 							{!orderSubmited && (
-								<Button onClick={handleOrder}>Submit order!</Button>
+								<Button onClick={handleOrder} style={{ margin: "auto" }}>
+									Submit order!
+								</Button>
 							)}
 						</>
 					)}

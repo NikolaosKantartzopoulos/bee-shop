@@ -57,6 +57,7 @@ function Navbar() {
 				>
 					<Link href="/admin/add-product">Add product</Link>
 					<Link href="/admin/products-table">Handle products</Link>
+					<Link href="/admin/manage-orders">Manage orders</Link>
 					<Link href="/admin/handle-newsletter">Newsletter</Link>
 				</div>
 			</div>

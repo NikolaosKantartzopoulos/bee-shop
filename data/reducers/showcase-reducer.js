@@ -5,7 +5,7 @@ export function showcaseReducer(state, action) {
 				.filter((a) => {
 					if (action.selectedFrom == "All") {
 						return true;
-					} else if (a.from == action.selectedFrom) {
+					} else if (a.harvestedFrom == action.selectedFrom) {
 						return true;
 					}
 				})
