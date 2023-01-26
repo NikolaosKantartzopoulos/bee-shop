@@ -13,12 +13,12 @@ import ShowcaseContext from "../../data/context/showcase-context";
 import SearchIcon from "../../public/assets/images/search.svg";
 
 import styles from "../../components/Main/Shop/Shop.module.css";
+import ToolsContext from "../../data/context/tools-context";
 
 function Shop({ allProducts }) {
 	const cartCtx = useContext(CartContext);
+	const toolsCtx = useContext(ToolsContext);
 	const showcaseCtx = useContext(ShowcaseContext);
-
-	const [sidebarVisible, setSidebarVisible] = useState(false);
 
 	const cartInventory = (
 		<p style={{ height: "2rem" }}>
@@ -35,18 +35,23 @@ function Shop({ allProducts }) {
 		showcaseCtx.resetShowcase(allProducts);
 	}, []);
 
+	function handleFilterSidebarVisibility() {
+		if (toolsCtx.dropdownOpen === "") {
+			toolsCtx.setDropdownOpen("filterSidebarVisible");
+		} else {
+			toolsCtx.setDropdownOpen("");
+		}
+	}
+
 	return (
 		<div className={styles.shopComponent}>
 			<Image
 				src={SearchIcon}
 				alt="Search Products"
 				className={styles.searchImage}
-				onClick={() => setSidebarVisible(!sidebarVisible)}
+				onClick={handleFilterSidebarVisibility}
 			/>
-			<ProductSidebar
-				sidebarVisible={sidebarVisible}
-				setSidebarVisible={setSidebarVisible}
-			/>
+			<ProductSidebar />
 			<ProductGallery />
 		</div>
 	);

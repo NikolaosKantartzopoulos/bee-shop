@@ -7,13 +7,19 @@ import Button from "../UI/Button";
 import styles from "./Header.module.css";
 
 import CartContext from "../../data/context/cart-context";
+import ToolsContext from "../../data/context/tools-context";
 
 function Cart() {
 	const cartCtx = useContext(CartContext);
+	const toolsCtx = useContext(ToolsContext);
 	const [dropdownVisible, setDropdownVisible] = useState(false);
 	const [orderSubmited, setOrderSubmited] = useState(false);
 	function handleDropdownVisibility() {
-		setDropdownVisible((dropdownVisible) => !dropdownVisible);
+		if (toolsCtx.dropdownOpen === "") {
+			toolsCtx.setDropdownOpen("cartDropdownVisible");
+		} else {
+			toolsCtx.setDropdownOpen("");
+		}
 	}
 
 	function handleOrder(e) {
@@ -59,7 +65,7 @@ function Cart() {
 			<Image src={cartSVG} alt="cart" height={30} width={30} />
 			<span>{cartCtx.cartState ? cartCtx.cartState.totalCost : 0} €</span>
 			<span>{cartCtx.getAmountOfItemsInCart()}</span>
-			{dropdownVisible && (
+			{toolsCtx.dropdownOpen == "cartDropdownVisible" && (
 				<div
 					id="cartDropdown"
 					className={styles.cartDropdown}

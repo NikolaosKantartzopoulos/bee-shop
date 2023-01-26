@@ -5,6 +5,7 @@ import SidebarPrice from "./PoductSidebarComponents/SidebarPrice";
 import SidebarSize from "./PoductSidebarComponents/SidebarSize";
 import Button from "../../UI/Button";
 import styles from "./PoductSidebarComponents/ProductsSidebarComponents.module.css";
+import ToolsContext from "../../../data/context/tools-context";
 
 function inputStateReducer(state, action) {
 	switch (action.type) {
@@ -31,6 +32,7 @@ function inputStateReducer(state, action) {
 
 function ProductSidebar({ sidebarVisible, setSidebarVisible }) {
 	const showcaseCtx = useContext(ShowcaseContext);
+	const toolsCtx = useContext(ToolsContext);
 
 	const [inputState, dispatchInputStateAction] = useReducer(inputStateReducer, {
 		selectedFrom: "All",
@@ -62,7 +64,9 @@ function ProductSidebar({ sidebarVisible, setSidebarVisible }) {
 	return (
 		<form
 			className={`${styles.sidebarSection} ${
-				sidebarVisible ? styles.sidebarVisible : styles.sidebarHidden
+				toolsCtx.dropdownOpen == "filterSidebarVisible"
+					? styles.sidebarVisible
+					: styles.sidebarHidden
 			}`}
 			onSubmit={handleSubmitForm}
 		>

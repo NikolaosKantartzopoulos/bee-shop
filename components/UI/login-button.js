@@ -1,6 +1,7 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import ToolsContext from "../../data/context/tools-context";
 
 import accountIcon from "../../public/assets/images/account.svg";
 import Button from "./Button";
@@ -8,6 +9,8 @@ import Button from "./Button";
 import styles from "./login-button.module.css";
 
 export default function Component() {
+	const toolsCtx = useContext(ToolsContext);
+
 	const { data: session } = useSession();
 	const [dropdownVisible, setDropdownVisible] = useState(false);
 
@@ -39,6 +42,14 @@ export default function Component() {
 		console.log(data);
 	}
 
+	function handleAccountDropdownVisibility() {
+		if (toolsCtx.dropdownOpen === "accountDropdownVisible") {
+			toolsCtx.setDropdownOpen("");
+		} else {
+			toolsCtx.setDropdownOpen("accountDropdownVisible");
+		}
+	}
+
 	return (
 		<div className={styles.accountControlDiv}>
 			<Image
@@ -46,9 +57,9 @@ export default function Component() {
 				alt="Account Icon"
 				width={48}
 				height={48}
-				onClick={() => setDropdownVisible(!dropdownVisible)}
+				onClick={handleAccountDropdownVisibility}
 			/>
-			{dropdownVisible && (
+			{toolsCtx.dropdownOpen === "accountDropdownVisible" && (
 				<div className={styles.dropdownDiv}>
 					{signUpFormVisible && !session && (
 						<div className={styles.signupDiv}>
