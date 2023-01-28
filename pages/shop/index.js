@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import Image from "next/image";
+import { getSession } from "next-auth/react";
 
 import ProductSidebar from "../../components/Main/Shop/ProductSidebar";
 import ProductGallery from "../../components/Main/Shop/ProductGallery";
@@ -15,7 +16,7 @@ import SearchIcon from "../../public/assets/images/search.svg";
 import styles from "../../components/Main/Shop/Shop.module.css";
 import ToolsContext from "../../data/context/tools-context";
 
-function Shop({ allProducts }) {
+function Shop({ allProducts, session }) {
 	const cartCtx = useContext(CartContext);
 	const toolsCtx = useContext(ToolsContext);
 	const showcaseCtx = useContext(ShowcaseContext);
@@ -57,14 +58,26 @@ function Shop({ allProducts }) {
 	);
 }
 
-export async function getStaticProps() {
+export default Shop;
+
+export async function getServerSideProps(context) {
+	const session = await getSession({ req: context.req });
+
 	const [client, db] = await connectDatabase();
 	const documents = await db.collection("products").find().toArray();
 
 	const allProducts = documents.map((p) => ({ ...p, _id: p._id.toString() }));
+
+	if (!session) {
+		return {
+			redirect: {
+				destination: "/about-us",
+				permanent: false,
+			},
+		};
+	}
+
 	return {
-		props: { allProducts },
+		props: { allProducts, session },
 	};
 }
-
-export default Shop;

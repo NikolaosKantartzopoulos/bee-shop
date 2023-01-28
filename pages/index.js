@@ -1,11 +1,11 @@
-export default function Home() {
+export default function Home(props) {
 	return <h1></h1>;
 }
-async function getServerSideProps() {
+export async function getServerSideProps() {
 	return {
 		props: {},
 		redirect: {
-			destination: "/shop",
+			destination: "/about-us",
 			permanent: false,
 		},
 	};

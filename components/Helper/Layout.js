@@ -20,8 +20,8 @@ export default function Layout({ children }) {
 			)}
 			<div style={{ minHeight: "100vh", position: "relative" }}>
 				<Header />
-				<main style={{ paddingBottom: "2.5rem" }}>{children}</main>
-				<Footer />
+				<main style={{ minHeight: "calc(100vh - 5rem)" }}>{children}</main>
+				<Footer style={{ position: "absolute", bottom: 0 }} />
 			</div>
 		</>
 	);

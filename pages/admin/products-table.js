@@ -1,5 +1,7 @@
-import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
+
+import { getSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 import { connectDatabase } from "../../data/databaseFunctions";
 
@@ -166,7 +168,18 @@ function ProductsTable({ allProducts }) {
 
 export default ProductsTable;
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
+	const session = await getSession({ req: context.req });
+
+	if (!session) {
+		return {
+			redirect: {
+				destination: "/about-us",
+				permanent: false,
+			},
+		};
+	}
+
 	const [client, db] = await connectDatabase();
 	const documents = await db.collection("products").find().toArray();
 

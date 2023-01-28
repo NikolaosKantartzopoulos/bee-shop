@@ -4,8 +4,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 import styles from "./Navbar.module.css";
+import { useSession } from "next-auth/react";
 
 function Navbar() {
+	const { data: session } = useSession();
+
 	const [adminTabVisible, setAdminTabVisible] = useState(false);
 	const router = useRouter();
 	return (
@@ -16,12 +19,16 @@ function Navbar() {
 					onClick={() => setAdminTabVisible(false)}
 				></div>
 			)}
-			<Link
-				href={"/shop"}
-				style={{ backgroundColor: router.pathname === "/shop" ? "red" : null }}
-			>
-				Shop
-			</Link>
+			{session && (
+				<Link
+					href={"/shop"}
+					style={{
+						backgroundColor: router.pathname === "/shop" ? "red" : null,
+					}}
+				>
+					Shop
+				</Link>
+			)}
 			<Link
 				href={"/about-us"}
 				style={{
@@ -38,29 +45,25 @@ function Navbar() {
 			>
 				Contact
 			</Link>
-			<div
-				className={styles.linkPlaceholder}
-				onClick={() => setAdminTabVisible(!adminTabVisible)}
-			>
-				{/* <Link
-					href={"/admin"}
-					style={{
-						backgroundColor: router.pathname === "/admin" ? "red" : null,
-					}}
-				> */}
-				Admin
-				{/* </Link> */}
+
+			{session && (
 				<div
-					className={
-						adminTabVisible ? styles.hoverTabVisible : styles.hoverTabHidden
-					}
+					className={styles.linkPlaceholder}
+					onClick={() => setAdminTabVisible(!adminTabVisible)}
 				>
-					<Link href="/admin/add-product">Add product</Link>
-					<Link href="/admin/products-table">Handle products</Link>
-					<Link href="/admin/manage-orders">Manage orders</Link>
-					<Link href="/admin/handle-newsletter">Newsletter</Link>
+					Admin
+					<div
+						className={
+							adminTabVisible ? styles.hoverTabVisible : styles.hoverTabHidden
+						}
+					>
+						<Link href="/admin/add-product">Add product</Link>
+						<Link href="/admin/products-table">Handle products</Link>
+						<Link href="/admin/manage-orders">Manage orders</Link>
+						<Link href="/admin/handle-newsletter">Newsletter</Link>
+					</div>
 				</div>
-			</div>
+			)}
 		</nav>
 	);
 }
