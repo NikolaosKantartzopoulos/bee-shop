@@ -5,9 +5,7 @@ import AddProductForm from "../../components/Main/admin/add-product/AddProductFo
 
 function AddProduct() {
 	return (
-		<div>
 			<AddProductForm />
-		</div>
 	);
 }
 

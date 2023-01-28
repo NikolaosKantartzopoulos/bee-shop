@@ -12,6 +12,7 @@ import CartContext from "../../data/context/cart-context";
 import ShowcaseContext from "../../data/context/showcase-context";
 
 import SearchIcon from "../../public/assets/images/search.svg";
+import honeycomb from "../../public/assets/images/honeycomb.jpg";
 
 import styles from "../../components/Main/Shop/Shop.module.css";
 import ToolsContext from "../../data/context/tools-context";
@@ -46,6 +47,13 @@ function Shop({ allProducts, session }) {
 
 	return (
 		<div className={styles.shopComponent}>
+			<Image
+				src={honeycomb}
+				alt="bee on flower"
+				fill
+				priority
+				style={{ opacity: 0.4 }}
+			/>
 			<Image
 				src={SearchIcon}
 				alt="Search Products"

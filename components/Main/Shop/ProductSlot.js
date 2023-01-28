@@ -18,7 +18,7 @@ function ProductSlot({ product }) {
 		imgSrc = product.url;
 	} else {
 		imgSrc =
-			"https://images.unsplash.com/photo-1607006344380-b6775a0824a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=741&q=80";
+			"https://images.unsplash.com/photo-1555035900-54c17f3bc1eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80";
 	}
 
 	function handleAddItem() {
@@ -47,6 +47,7 @@ function ProductSlot({ product }) {
 			>
 				<Image
 					src={imgSrc}
+					sizes="(max-width: 768px) 100vw"
 					alt="A jar of delicious honey"
 					fill
 					className={styles.productImage}

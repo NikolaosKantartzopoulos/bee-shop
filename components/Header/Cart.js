@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React, { useContext, useState } from "react";
 
-import { useSession } from "next-auth/react";
-
 import CartContext from "../../data/context/cart-context";
 import ToolsContext from "../../data/context/tools-context";
 
@@ -10,14 +8,16 @@ import cartSVG from "../../public/assets/images/cart.svg";
 import Button from "../UI/Button";
 
 import styles from "./Header.module.css";
+import { useRouter } from "next/router";
 
 function Cart() {
 	const cartCtx = useContext(CartContext);
 	const toolsCtx = useContext(ToolsContext);
 
-	const { data: session } = useSession();
+	const router = useRouter();
 
 	const [orderSubmited, setOrderSubmited] = useState(false);
+
 	function handleDropdownVisibility() {
 		if (toolsCtx.dropdownOpen === "") {
 			toolsCtx.setDropdownOpen("cartDropdownVisible");
@@ -25,35 +25,16 @@ function Cart() {
 			toolsCtx.setDropdownOpen("");
 		}
 	}
-	console.log(session);
 
-	function handleOrder(e) {
-		e.stopPropagation();
-		if (cartCtx.items.length === 0) {
+	async function handlePushToOrderDetailsPage() {
+		if (cartCtx.cartState.items.length === 0) {
 			alert("Cart is empty!");
 			return;
 		}
 
-		let order = cartCtx.items.map((item) => {
-			return {
-				title: item.title,
-				id: item.id,
-				amount: item.amount,
-			};
-		});
-
-		cartCtx.emptyCart();
-		fetch("/api/order", {
-			method: "POST",
-			body: JSON.stringify({ order: order }),
-			headers: {
-				"Content-Type": "application/json",
-			},
-		}).then((res) => {
-			if (res.ok) {
-				setOrderSubmited(true);
-			}
-			return res.json();
+		toolsCtx.setDropdownOpen(null);
+		router.replace({
+			pathname: "/shop/get-order-details",
 		});
 	}
 
@@ -66,7 +47,17 @@ function Cart() {
 	}
 
 	return (
-		<div className={styles.cart} onClick={handleDropdownVisibility}>
+		<div
+			className={styles.cart}
+			onClick={() => {
+				router.pathname === "/shop/get-order-details"
+					? null
+					: handleDropdownVisibility();
+			}}
+			style={{
+				opacity: router.pathname === "/shop/get-order-details" ? 0.5 : null,
+			}}
+		>
 			<Image src={cartSVG} alt="cart" height={30} width={30} />
 			<span>{cartCtx.cartState ? cartCtx.cartState.totalCost : 0} €</span>
 			<span>{cartCtx.getAmountOfItemsInCart()}</span>
@@ -80,7 +71,7 @@ function Cart() {
 						<>
 							<div>
 								{cartCtx.cartState.items.map((item) => (
-									<div className={styles.itemRow}>
+									<div className={styles.itemRow} key={item._id}>
 										<span>{item.title}</span>
 										<span>{item.numberOfItems}</span>
 										<Button onClick={() => deleteItemsHandler(item)}>
@@ -90,12 +81,16 @@ function Cart() {
 								))}
 							</div>
 							{!orderSubmited && (
-								<Button onClick={handleOrder} style={{ margin: "auto" }}>
-									Submit order!
+								<Button
+									onClick={handlePushToOrderDetailsPage}
+									style={{ margin: "auto" }}
+								>
+									Proceed
 								</Button>
 							)}
 						</>
 					)}
+
 					{orderSubmited && (
 						<>
 							<p>Order confirmed!</p>

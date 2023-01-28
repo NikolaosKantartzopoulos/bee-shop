@@ -62,107 +62,109 @@ function ProductsTable({ allProducts }) {
 	}
 
 	return (
-		<table className={styles.productsTable}>
-			<thead>
-				<tr>
-					<th>Title</th>
-					<th>From</th>
-					<th>€</th>
-					<th>Size</th>
-				</tr>
-			</thead>
-			<tbody>
-				{showcaseCtx.itemsShowcased.length > 0 &&
-					showcaseCtx.itemsShowcased.map((item) => (
-						<tr
-							key={item._id}
-							style={{
-								backgroundColor:
-									editValues._id === item._id ? "lightblue" : null,
-							}}
-						>
-							<td>
-								{editValues._id === item._id ? (
-									<TableInput
-										value={editValues.title}
-										onChange={(e) =>
-											setEditValues({ ...editValues, title: e.target.value })
-										}
-									/>
-								) : (
-									item.title
-								)}
-							</td>
-							<td>
-								{editValues._id === item._id ? (
-									<TableInput
-										value={editValues.harvestedFrom}
-										onChange={(e) =>
-											setEditValues({
-												...editValues,
-												harvestedFrom: e.target.value,
-											})
-										}
-									/>
-								) : (
-									item.harvestedFrom
-								)}
-							</td>
-							<td>
-								{editValues._id === item._id ? (
-									<TableInput
-										value={editValues.price}
-										onChange={(e) =>
-											setEditValues({ ...editValues, price: e.target.value })
-										}
-									/>
-								) : (
-									item.price
-								)}
-							</td>
-							<td>
-								{editValues._id === item._id ? (
-									<TableInput
-										value={editValues.size}
-										onChange={(e) =>
-											setEditValues({ ...editValues, size: e.target.value })
-										}
-									/>
-								) : (
-									item.size
-								)}
-							</td>
-
-							{editValues._id === item._id ? (
-								<td
-									className={styles.interactiveItemEdit}
-									onClick={handleSubmitEditProduct}
-								>
-									Save
+		<section style={{ overflow: "hidden" }}>
+			<table className={styles.productsTable}>
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>From</th>
+						<th>€</th>
+						<th>Size</th>
+					</tr>
+				</thead>
+				<tbody>
+					{showcaseCtx.itemsShowcased.length > 0 &&
+						showcaseCtx.itemsShowcased.map((item) => (
+							<tr
+								key={item._id}
+								style={{
+									backgroundColor:
+										editValues._id === item._id ? "lightblue" : null,
+								}}
+							>
+								<td>
+									{editValues._id === item._id ? (
+										<TableInput
+											value={editValues.title}
+											onChange={(e) =>
+												setEditValues({ ...editValues, title: e.target.value })
+											}
+										/>
+									) : (
+										item.title
+									)}
 								</td>
-							) : (
-								<>
+								<td>
+									{editValues._id === item._id ? (
+										<TableInput
+											value={editValues.harvestedFrom}
+											onChange={(e) =>
+												setEditValues({
+													...editValues,
+													harvestedFrom: e.target.value,
+												})
+											}
+										/>
+									) : (
+										item.harvestedFrom
+									)}
+								</td>
+								<td>
+									{editValues._id === item._id ? (
+										<TableInput
+											value={editValues.price}
+											onChange={(e) =>
+												setEditValues({ ...editValues, price: e.target.value })
+											}
+										/>
+									) : (
+										item.price
+									)}
+								</td>
+								<td>
+									{editValues._id === item._id ? (
+										<TableInput
+											value={editValues.size}
+											onChange={(e) =>
+												setEditValues({ ...editValues, size: e.target.value })
+											}
+										/>
+									) : (
+										item.size
+									)}
+								</td>
+
+								{editValues._id === item._id ? (
 									<td
 										className={styles.interactiveItemEdit}
-										onClick={(e) => editItem(e, item)}
+										onClick={handleSubmitEditProduct}
 									>
-										Edit
+										Save
 									</td>
-
-									{!editValues._id && (
+								) : (
+									<>
 										<td
-											className={styles.interactiveItemDelete}
-											onClick={(e) => deleteItem(e, item)}
+											className={styles.interactiveItemEdit}
+											onClick={(e) => editItem(e, item)}
 										>
-											Delete
+											Edit
 										</td>
-									)}
-								</>
-							)}
-						</tr>
-					))}
-			</tbody>
-		</table>
+
+										{!editValues._id && (
+											<td
+												className={styles.interactiveItemDelete}
+												onClick={(e) => deleteItem(e, item)}
+											>
+												Delete
+											</td>
+										)}
+									</>
+								)}
+							</tr>
+						))}
+				</tbody>
+			</table>
+		</section>
 	);
 }
 

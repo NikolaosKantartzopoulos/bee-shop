@@ -11,3 +11,10 @@
   height: 1.5rem;
   width: 100%;
 }
+
+@media screen and (max-width: 600px) {
+  .inputDiv {
+    display: flex;
+    flex-direction: column;
+  }
+}

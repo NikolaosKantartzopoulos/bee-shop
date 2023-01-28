@@ -43,7 +43,6 @@ function ProductSidebar({ sidebarVisible, setSidebarVisible }) {
 	});
 
 	function handleFromSelection(e) {
-		console.log(e.target.value);
 		dispatchInputStateAction({
 			type: "setFrom",
 			fromInputValue: e.target.value,

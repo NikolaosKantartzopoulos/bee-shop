@@ -12,7 +12,7 @@ export default function Component() {
 	const toolsCtx = useContext(ToolsContext);
 
 	const { data: session } = useSession();
-	const [dropdownVisible, setDropdownVisible] = useState(false);
+	const [signUpFormVisible, setSignUpFormVisible] = useState(false);
 
 	const [usernameInput, setUsernameInput] = useState("");
 	const [passwordInput, setPasswordInput] = useState("");
@@ -28,8 +28,6 @@ export default function Component() {
 		setAddressInput("");
 	}
 
-	const [signUpFormVisible, setSignUpFormVisible] = useState(false);
-
 	async function sendSignupPOST() {
 		if (
 			usernameInput.trim() === "" ||
@@ -38,6 +36,7 @@ export default function Component() {
 			addressInput.trim() === "" ||
 			emailInput.trim() === ""
 		) {
+			toolsCtx.setInfo({ type: "error", text: "A field is empty" });
 			return;
 		}
 		const postRes = await fetch("/api/admin/signup", {
@@ -57,7 +56,7 @@ export default function Component() {
 			resetInputFields();
 			setSignUpFormVisible(false);
 			const data = await postRes.json();
-			console.log(data);
+			toolsCtx.setInfo(data);
 		}
 	}
 

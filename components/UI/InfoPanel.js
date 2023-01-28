@@ -1,6 +1,6 @@
 import React, { createRef, useContext, useEffect, useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import ToolsContext from "../../helper/store/contexts/tools-context";
+import ToolsContext from "../../data/context/tools-context";
 
 import styles from "./InfoPanel.module.css";
 
@@ -17,6 +17,10 @@ function InfoPanel() {
 			setInfoText(info.text);
 			setInfoType(info.type);
 			setInProp(true);
+			setTimeout(() => {
+				setInProp(false);
+				setInfoText(null);
+			}, 3000);
 		} else {
 			setInProp(false);
 			setInfoText(null);
@@ -35,7 +39,12 @@ function InfoPanel() {
 			<div
 				ref={nodeRef}
 				style={{
-					backgroundColor: infoType == "error" ? "darkred" : "green",
+					backgroundColor:
+						infoType == "error"
+							? "darkred"
+							: infoType == "ok"
+							? "green"
+							: "darkorange",
 				}}
 				className={styles.infoPanel}
 			>

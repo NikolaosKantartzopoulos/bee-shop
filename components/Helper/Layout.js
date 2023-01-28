@@ -9,6 +9,8 @@ import Footer from "../Footer/Footer.js";
 import ToolsContext from "../../data/context/tools-context.js";
 import { useContext } from "react";
 
+import InfoPanel from "../UI/InfoPanel";
+
 import styles from "./Layout.module.css";
 
 export default function Layout({ children }) {
@@ -25,17 +27,7 @@ export default function Layout({ children }) {
 
 	return (
 		<>
-			{toolsCtx.dropdownOpen && (
-				<div
-					style={{
-						position: "absolute",
-						width: "100vw",
-						height: "100vh",
-						zIndex: 3,
-					}}
-					onClick={() => toolsCtx.setDropdownOpen("")}
-				/>
-			)}
+			<InfoPanel />
 			<div style={{ minHeight: "100vh", position: "relative" }}>
 				<Header setInProp={setInProp} />
 				<CSSTransition
@@ -47,6 +39,17 @@ export default function Layout({ children }) {
 					unmountOnExit
 				>
 					<main style={{ minHeight: "calc(100vh - 5rem)" }} ref={nodeRef}>
+						{toolsCtx.dropdownOpen && (
+							<div
+								style={{
+									position: "absolute",
+									width: "100vw",
+									height: "100vh",
+									zIndex: 3,
+								}}
+								onClick={() => toolsCtx.setDropdownOpen("")}
+							/>
+						)}
 						{children}
 					</main>
 				</CSSTransition>
