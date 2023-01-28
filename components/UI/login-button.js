@@ -17,12 +17,25 @@ export default function Component() {
 	const [usernameInput, setUsernameInput] = useState("");
 	const [passwordInput, setPasswordInput] = useState("");
 	const [emailInput, setEmailInput] = useState("");
+	const [telInput, setTelInput] = useState("");
+	const [addressInput, setAddressInput] = useState("");
+
+	function resetInputFields() {
+		setUsernameInput("");
+		setPasswordInput("");
+		setEmailInput("");
+		setTelInput("");
+		setAddressInput("");
+	}
+
 	const [signUpFormVisible, setSignUpFormVisible] = useState(false);
 
 	async function sendSignupPOST() {
 		if (
 			usernameInput.trim() === "" ||
 			passwordInput.trim() === "" ||
+			telInput.trim() === "" ||
+			addressInput.trim() === "" ||
 			emailInput.trim() === ""
 		) {
 			return;
@@ -36,10 +49,16 @@ export default function Component() {
 				username: usernameInput,
 				password: passwordInput,
 				email: emailInput,
+				address: addressInput,
+				tel: telInput,
 			}),
 		});
-		const data = await postRes.json();
-		console.log(data);
+		if (postRes.ok) {
+			resetInputFields();
+			setSignUpFormVisible(false);
+			const data = await postRes.json();
+			console.log(data);
+		}
 	}
 
 	function handleAccountDropdownVisibility() {
@@ -82,6 +101,20 @@ export default function Component() {
 								<input
 									value={emailInput}
 									onChange={(e) => setEmailInput(e.target.value)}
+								/>
+							</div>
+							<div className={styles.signupRow}>
+								<span>tel.</span>
+								<input
+									value={telInput}
+									onChange={(e) => setTelInput(e.target.value)}
+								/>
+							</div>
+							<div className={styles.signupRow}>
+								<span>Address</span>
+								<input
+									value={addressInput}
+									onChange={(e) => setAddressInput(e.target.value)}
 								/>
 							</div>
 							<Button onClick={sendSignupPOST}>Sign up!</Button>

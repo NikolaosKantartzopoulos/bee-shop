@@ -4,10 +4,10 @@ import Navbar from "./Navbar/Navbar";
 import LoginButton from "../UI/login-button";
 import styles from "./Header.module.css";
 
-function Header() {
+function Header({ setInProp }) {
 	return (
 		<header className={styles.headerStyles}>
-			<Navbar />
+			<Navbar setInProp={setInProp} />
 			<Cart />
 			<LoginButton />
 		</header>

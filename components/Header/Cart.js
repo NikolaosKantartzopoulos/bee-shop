@@ -1,18 +1,22 @@
 import Image from "next/image";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+
+import { useSession } from "next-auth/react";
+
+import CartContext from "../../data/context/cart-context";
+import ToolsContext from "../../data/context/tools-context";
 
 import cartSVG from "../../public/assets/images/cart.svg";
 import Button from "../UI/Button";
 
 import styles from "./Header.module.css";
 
-import CartContext from "../../data/context/cart-context";
-import ToolsContext from "../../data/context/tools-context";
-
 function Cart() {
 	const cartCtx = useContext(CartContext);
 	const toolsCtx = useContext(ToolsContext);
-	const [dropdownVisible, setDropdownVisible] = useState(false);
+
+	const { data: session } = useSession();
+
 	const [orderSubmited, setOrderSubmited] = useState(false);
 	function handleDropdownVisibility() {
 		if (toolsCtx.dropdownOpen === "") {
@@ -21,6 +25,7 @@ function Cart() {
 			toolsCtx.setDropdownOpen("");
 		}
 	}
+	console.log(session);
 
 	function handleOrder(e) {
 		e.stopPropagation();

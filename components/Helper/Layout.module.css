@@ -1,0 +1,44 @@
+.mainSection {
+  max-width: 760px;
+  margin: auto;
+  padding-bottom: 3rem;
+
+}
+
+.layoutSection {
+  position: relative;
+  min-height: 100vh;
+}
+
+
+.enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.enterActive {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 250ms ease-in-out;
+}
+
+.enterDone {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.exit {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.exitActivective {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 250ms ease-in-out;
+}
+
+.exitDone {
+  opacity: 0;
+  transform: translateX(30px);
+}

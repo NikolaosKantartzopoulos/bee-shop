@@ -1,0 +1,53 @@
+.infoPanel {
+  text-align: center;
+  width: 100%;
+  color: var(--light-main-1);
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+}
+
+.infoPanel>div {
+  transition: all 300ms;
+  position: relative;
+  top: 0.5rem;
+}
+
+.enter {
+  transform: translateY(-50%);
+  height: 0rem;
+  opacity: 0;
+}
+
+.enterActive {
+  transition: all 300ms;
+  transform: translateY(0px);
+  height: 2rem;
+  opacity: 1;
+}
+
+.enterDone {
+  transform: translateY(0px);
+  height: 2rem;
+  opacity: 1;
+}
+
+.exit {
+  transform: translateY(0px);
+  height: 2rem;
+  opacity: 1;
+}
+
+.exitActive {
+  transition: all 300ms;
+  transform: translateY(-50%);
+  height: 0rem;
+  opacity: 0;
+}
+
+.exitDone {
+
+  transform: translateY(-50%);
+  height: 0rem;
+  opacity: 0;
+}
