@@ -53,7 +53,7 @@ export default function Layout({ children }) {
 						{children}
 					</main>
 				</CSSTransition>
-				<Footer style={{ position: "absolute", bottom: 0 }} />
+				<Footer />
 			</div>
 		</>
 	);

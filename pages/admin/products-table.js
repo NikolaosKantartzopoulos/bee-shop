@@ -8,6 +8,7 @@ import { connectDatabase } from "../../data/databaseFunctions";
 import ShowcaseContext from "../../data/context/showcase-context";
 
 import styles from "./products-table.module.css";
+import ToolsContext from "../../data/context/tools-context";
 
 function TableInput({ value, onChange }) {
 	return <input value={value} onChange={onChange} />;
@@ -16,6 +17,8 @@ function TableInput({ value, onChange }) {
 function ProductsTable({ allProducts }) {
 	const router = useRouter();
 	const showcaseCtx = useContext(ShowcaseContext);
+	const toolsCtx = useContext(ToolsContext);
+
 	const emptyValues = {
 		_id: "",
 		title: "",
@@ -41,7 +44,21 @@ function ProductsTable({ allProducts }) {
 			url: item.url,
 		});
 	}
-	function deleteItem(e, item) {}
+	async function deleteItem(e, item) {
+		const res = await fetch("/api/admin/manage-products", {
+			method: "DELETE",
+			headers: { "Content-Type": "text/plain" },
+			body: item._id,
+		});
+		if (res.ok) {
+			const data = await res.json();
+
+			toolsCtx.setInfo(data);
+		} else {
+			toolsCtx.setInfo({ type: "error", text: "An error occured" });
+		}
+		router.reload();
+	}
 
 	async function handleSubmitEditProduct() {
 		const editRes = await fetch("/api/admin/manage-products", {

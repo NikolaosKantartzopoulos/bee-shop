@@ -7,10 +7,9 @@ function Footer() {
 				width: "100%",
 				backgroundColor: "darkorange",
 				textAlign: "center",
-				position: "absolute",
 				bottom: "0px",
-				height: "1.5rem",
-				paddingTop: "0.2rem",
+				height: "2rem",
+				paddingTop: "0.5rem",
 			}}
 		>
 			Beeshop 2022

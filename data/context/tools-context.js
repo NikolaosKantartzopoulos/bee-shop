@@ -3,8 +3,8 @@ import React, { createContext, useState } from "react";
 const ToolsContext = createContext({
 	dropdownOpen: "",
 	setDropdownOpen: () => {},
-	order: "",
-	setOrder: () => {},
+	info: {},
+	setInfo: () => {},
 });
 
 export function ToolsContextProvider(props) {

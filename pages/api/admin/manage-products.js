@@ -23,6 +23,15 @@ export default async function handler(req, res) {
 				}
 
 				break;
+			case "DELETE":
+				const delRes = await db
+					.collection("products")
+					.deleteOne({ _id: new ObjectId(req.body) });
+				if (delRes.deletedCount == 1) {
+					res.status(200).json({ type: "ok", text: "Item deleted" });
+				} else {
+					res.status(500);
+				}
 		}
 	} finally {
 		client.close();

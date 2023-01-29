@@ -10,12 +10,15 @@ export function showcaseReducer(state, action) {
 					}
 				})
 				.filter((a) => {
-					if (a.price >= action.lowerPrice && a.price <= action.higherPrice) {
+					if (
+						+a.price >= +action.lowerPrice &&
+						+a.price <= +action.higherPrice
+					) {
 						return true;
 					}
 				})
 				.filter((a) => {
-					if (a.size >= action.sizeLowest && a.size <= action.sizeHighest) {
+					if (+a.size >= +action.sizeLowest && +a.size <= +action.sizeHighest) {
 						return true;
 					}
 				});

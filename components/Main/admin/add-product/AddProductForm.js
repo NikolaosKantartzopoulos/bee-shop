@@ -6,23 +6,33 @@ import Button from "../../../UI/Button";
 
 import styles from "../../../Helper/Input.module.css";
 import divStyles from "./AddProductForm.module.css";
+import ToolsContext from "../../../../data/context/tools-context";
 
 function AddProductForm() {
+	const toolsCtx = useContext(ToolsContext);
+
 	const [productInfo, dispatchProductInfoAction] = useReducer(
 		addProductReducer,
 		{ title: "", harvestedFrom: "", price: 0, size: 1000, url: "" }
 	);
 
-	function submitHandler(e) {
+	async function submitHandler(e) {
 		e.preventDefault();
 
-		fetch("/api/add-new-product", {
+		const res = await fetch("/api/admin/add-new-product", {
 			method: "POST",
 			body: JSON.stringify(productInfo),
 			headers: {
 				"Content-Type": "application/json",
 			},
-		}).then((res) => res.json());
+		});
+		if (res.ok) {
+			const data = await res.json();
+
+			toolsCtx.setInfo({ type: data.type, text: data.text });
+		} else {
+			toolsCtx.setInfo({ type: "error", text: "An error occured" });
+		}
 	}
 
 	return (
@@ -97,7 +107,7 @@ function AddProductForm() {
 					}
 				></input>
 			</div>
-			<Button>Add new product</Button>
+			<Button type="submit">Add new product</Button>
 		</form>
 	);
 }

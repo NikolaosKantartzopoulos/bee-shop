@@ -4,8 +4,6 @@ export default async function handler(req, res) {
 	const [client, db] = await connectDatabase();
 	try {
 		if (req.method === "POST") {
-			console.log(req.body);
-
 			const newOrder = {
 				date: new Date().toISOString(),
 				items: req.body.order.items,

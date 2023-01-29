@@ -21,30 +21,35 @@ function AboutUS() {
 				<div id="profile" className={styles.profile}>
 					<h3>PROFILE</h3>
 					<span>
-						Melefsis is a family run nomadic beekeeping company. It was founded
-						in 2013 by Petros Iliadis, driven by his interest in a more natural
-						way of living, away from the city’s hectic life. Beekeeping started
-						as a hobby for him, but fascinated by the world of bees, he quickly
-						developed it to a full time occupation. In 2015 Adam Cosgrove joined
-						the family and the bees. Coming from the Yacht industry, he fell in
-						love with the bees and exported our honey in UK. Elia Iliadi with
-						her graphic & design knowledge created company ID. Petros made his
-						own Youtube channel to help other beekeepers who just started their
-						beautiful journey. Today he has over 18.000 beekeepers followers
-						driven by the same passion and love for bees. As he says "together
-						we're gonna build and change beekeepers community in Greece{" "}
+						There are many variations of passages of Lorem Ipsum available, but
+						the majority have suffered alteration in some form, by injected
+						humour, or randomised words which don't look even slightly
+						believable. If you are going to use a passage of Lorem Ipsum, you
+						need to be sure there isn't anything embarrassing hidden in the
+						middle of text. All the Lorem Ipsum generators on the Internet tend
+						to repeat predefined chunks as necessary, making this the first true
+						generator on the Internet. It uses a dictionary of over 200 Latin
+						words, combined with a handful of model sentence structures, to
+						generate Lorem Ipsum which looks reasonable. The generated Lorem
+						Ipsum is therefore always free from repetition, injected humour, or
+						non-characteristic words etc.
 					</span>
 				</div>
 				<div id="ourMission" className={styles.ourMission}>
 					<h3>OUR MISSION</h3>
 					<span>
-						Our mission is the collection of high quality raw honey with the
-						particular characteristics of each location’s plant life. Honey,
-						like wine, varies from season to season and is totally depended on
-						nature’s changes. Therefore we aim to supply our customers with a
-						unique artisan product in every crop.We are also dedicated to the
-						distribution of all bee products (bee pollen, wax, propolis & royal
-						jelly) in a processed or raw form.
+						Contrary to popular belief, Lorem Ipsum is not simply random text.
+						It has roots in a piece of classical Latin literature from 45 BC,
+						making it over 2000 years old. Richard McClintock, a Latin professor
+						at Hampden-Sydney College in Virginia, looked up one of the more
+						obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+						going through the cites of the word in classical literature,
+						discovered the undoubtable source. Lorem Ipsum comes from sections
+						1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
+						of Good and Evil) by Cicero, written in 45 BC. This book is a
+						treatise on the theory of ethics, very popular during the
+						Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+						amet..", comes from a line in section 1.10.32.
 					</span>
 				</div>
 			</div>
