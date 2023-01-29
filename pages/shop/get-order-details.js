@@ -57,7 +57,6 @@ function GetOrderDetails() {
 		});
 		if (res.ok) {
 			const data = await res.json();
-			console.log(data);
 		}
 
 		cartCtx.emptyCart();

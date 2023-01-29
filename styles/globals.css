@@ -38,4 +38,6 @@ h4 {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding: 0.5rem;
+  background-color: var(--dark-main-1);
+  color: var(--light-main-1)
 }

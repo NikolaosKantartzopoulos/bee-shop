@@ -1,0 +1,87 @@
+.productsTable {
+	margin: auto;
+	margin-top: 1rem;
+
+}
+
+.productsTable tr {
+	cursor: pointer;
+}
+
+
+
+.productsTable td,
+.productsTable th {
+	border: 1px solid black;
+	padding: 4px 8px;
+	color: black;
+	height: 2rem;
+}
+
+.productsTable thead {
+	color: var(--light-main-1);
+}
+
+.productsTable input {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.productsTable th:nth-child(3),
+.productsTable td:nth-child(3),
+.productsTable th:nth-child(4),
+.productsTable td:nth-child(4) {
+	width: 4rem;
+	text-align: center;
+
+}
+
+.productsTable th:nth-child(1),
+.productsTable th:nth-child(2),
+.productsTable td:nth-child(1) .productsTable td:nth-child(2) {
+	min-width: 8rem;
+
+}
+
+.productsTable input {
+	max-width: 6rem;
+}
+
+.productsTable tr:nth-child(even) {
+	background: var(--light-main-1)
+}
+
+.productsTable tr:nth-child(odd) {
+	background: var(--light-main-2)
+}
+
+.interactiveItemEdit,
+.interactiveItemDelete {
+	transition: all 0.15s;
+	cursor: pointer;
+}
+
+
+.interactiveItemEdit:hover {
+	transition: all 0.15s;
+	background-color: rgba(0, 0, 200, 0.2)
+}
+
+
+
+.interactiveItemDelete:hover {
+	transition: all 0.15s;
+	background-color: rgba(255, 0, 0, 0.2)
+}
+
+.productsTable th {
+	background-color: var(--dark-main-1);
+	color: var(--light0main-1);
+}
+
+@media screen and (max-width: 600px) {
+	.productsTable {
+		overflow: hidden;
+	}
+}
