@@ -1,14 +1,21 @@
 .headerStyles {
   display: grid;
-  grid-template-columns: 1fr 200px 64px;
+  grid-template-columns: 1fr 264px;
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
   background-color: var(--dark-main-1);
   color: var(--light-main-1);
+  height: 3rem;
 }
 
-
+.RightNavbarPart {
+  display: grid;
+  grid-template-columns: 200px 64px;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+}
 
 
 .cart {
@@ -23,6 +30,7 @@
   cursor: pointer;
   position: relative;
   z-index: 20;
+  height: 3rem;
 }
 
 
@@ -73,11 +81,29 @@
 
 @media screen and (max-width: 600px) {
   .headerStyles {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 9rem;
+
+  }
+
+
+  .RightNavbarPart {
+    grid-row: 3 / 4;
+    grid-column: 1 / 5;
+    height: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+
   }
 
   .cart {
-    width: 75%;
+    grid-column: 1 / 4;
+
+    width: 100%;
+    height: 100%;
     flex-direction: row;
     display: inline-flex;
     justify-content: space-around;

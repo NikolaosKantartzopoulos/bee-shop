@@ -1,5 +1,6 @@
 .accountControlDiv {
   position: relative;
+  height: 3rem;
   z-index: 5;
 }
 
@@ -47,10 +48,9 @@
   .accountControlDiv {
     position: relative;
     left: 1rem;
-    top: 4px;
     z-index: 5;
-    display: inline-block;
     height: 38px;
+    grid-column: 4 / 5;
   }
 
   .accountControlDiv img {

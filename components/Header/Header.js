@@ -8,8 +8,10 @@ function Header({ setInProp }) {
 	return (
 		<header className={styles.headerStyles}>
 			<Navbar setInProp={setInProp} />
-			<Cart />
-			<LoginButton />
+			<div className={styles.RightNavbarPart}>
+				<Cart />
+				<LoginButton />
+			</div>
 		</header>
 	);
 }
