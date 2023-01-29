@@ -59,7 +59,7 @@ function Navbar({ setInProp }) {
 					Shop
 				</Link>
 			)}
-			{session && session.user.isAdmin && (
+			{session && session.user.admin && (
 				<div
 					className={styles.linkPlaceholder}
 					onClick={() => setAdminTabVisible(!adminTabVisible)}
