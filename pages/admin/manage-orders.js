@@ -1,11 +1,19 @@
 import React from "react";
 
 import styles from "../../components/Helper/pages-css/ManageOrders.module.css";
+import OrderBox from "../../components/Main/admin/manage-orders/OrderBox";
 import { connectDatabase } from "../../data/databaseFunctions";
 
 function ManageOrders({ allOrders }) {
-	console.log(allOrders);
-	return <div className={styles.ManageOrdersPageRoute}></div>;
+	const order = allOrders[2];
+	console.log(order);
+
+	return (
+		<div className={styles.ManageOrdersPageRoute}>
+			<h4>Orders</h4>
+			<OrderBox order={order} />
+		</div>
+	);
 }
 
 export default ManageOrders;

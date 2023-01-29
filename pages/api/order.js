@@ -6,6 +6,7 @@ export default async function handler(req, res) {
 		if (req.method === "POST") {
 			const newOrder = {
 				date: new Date().toISOString(),
+				status: "seen",
 				items: req.body.order.items,
 				totalCost: req.body.order.totalCost,
 				user: req.body.user,

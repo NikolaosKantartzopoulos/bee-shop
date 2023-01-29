@@ -1,0 +1,28 @@
+.orderBox h4 {
+  background-color: var(--dark-main-1);
+  color: var(--light-main-1);
+  text-align: center;
+}
+
+.orderBox span {
+  min-width: 6rem;
+  padding-top: 0.2rem;
+}
+
+.orderStatusHeader {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+
+
+
+.statusDiv p {
+  display: flex;
+  gap: 1rem;
+  margin: 0.25rem;
+  justify-content: flex-start;
+  min-width: 7rem;
+
+}
