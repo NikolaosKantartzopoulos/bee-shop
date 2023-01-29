@@ -22,8 +22,6 @@ function OrderBox({ order }) {
 	}
 
 	async function handleOrderStatusChange(newStatus) {
-		console.log(newStatus);
-		console.log(order._id);
 		const res = await fetch("/api/admin/change-order-status", {
 			method: "PUT",
 			headers: { "Content-Type": "application-json" },

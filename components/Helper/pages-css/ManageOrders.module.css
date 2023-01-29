@@ -1,1 +1,21 @@
-.ManageOrdersPageRoute {}
+.ManageOrdersPageRoute {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ManageOrdersPageRoute>* {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 760px;
+}
+
+.checkboxesDiv {
+  display: flex;
+  gap: 1rem;
+  margin: auto;
+  height: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}

@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 						{ _id: new ObjectId(orderId) },
 						{ $set: { status: newStatus } }
 					);
-				console.log(putRes);
+
 				if (putRes.modifiedCount === 1) {
 					res.status(200).json({ type: "ok", text: "Order status Updated" });
 				} else {
