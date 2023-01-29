@@ -17,7 +17,7 @@ export default async function handler(req, res) {
 					.status(200)
 					.json({ type: "ok", text: "Order submited successfully!" });
 			} else {
-				res.status(500).json({ type: "error", text: "An error occured!" });
+				res.status(550).json({ type: "error", text: "An error occured!" });
 			}
 		}
 	} finally {

@@ -1,11 +1,18 @@
 .accountControlDiv {
   position: relative;
-  height: 3rem;
   z-index: 5;
+  flex: 1 1 20%;
+  background-color: var(--dark-main-1);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .accountControlDiv img {
   cursor: pointer;
+
 }
 
 .dropdownDiv {
@@ -21,6 +28,11 @@
   justify-content: space-around;
   align-items: center;
   z-index: 10;
+  top: 3rem;
+}
+
+.dropdownDiv span {
+  color: white
 }
 
 .signupDiv {
@@ -42,21 +54,4 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding: 4px 8px;
-}
-
-@media screen and (max-width: 600px) {
-  .accountControlDiv {
-    position: relative;
-    left: 1rem;
-    z-index: 5;
-    height: 38px;
-    grid-column: 4 / 5;
-  }
-
-  .accountControlDiv img {
-    height: 38px;
-
-  }
-
-
 }

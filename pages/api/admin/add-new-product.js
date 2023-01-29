@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 				if (postRes.acknowledged) {
 					res.status(200).json({ type: "ok", text: "Product submited" });
 				} else {
-					res.status(500);
+					res.status(550);
 				}
 		}
 	} finally {

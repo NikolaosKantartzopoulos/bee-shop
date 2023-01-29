@@ -15,28 +15,6 @@ function Navbar({ setInProp }) {
 	const currentRoute = router.pathname;
 	return (
 		<nav className={styles.mainNavbar}>
-			{adminTabVisible && (
-				<div
-					className={styles.myModule}
-					onClick={() => setAdminTabVisible(false)}
-				></div>
-			)}
-			{session && (
-				<Link
-					href={"/shop"}
-					onClick={() => {
-						if (currentRoute === "/shop") {
-							return;
-						}
-						setInProp(false);
-					}}
-					style={{
-						backgroundColor: router.pathname === "/shop" ? "red" : null,
-					}}
-				>
-					Shop
-				</Link>
-			)}
 			<Link
 				href={"/about-us"}
 				onClick={() => {
@@ -65,8 +43,23 @@ function Navbar({ setInProp }) {
 			>
 				Contact
 			</Link>
-
 			{session && (
+				<Link
+					href={"/shop"}
+					onClick={() => {
+						if (currentRoute === "/shop") {
+							return;
+						}
+						setInProp(false);
+					}}
+					style={{
+						backgroundColor: router.pathname === "/shop" ? "red" : null,
+					}}
+				>
+					Shop
+				</Link>
+			)}
+			{session && session.user.isAdmin && (
 				<div
 					className={styles.linkPlaceholder}
 					onClick={() => setAdminTabVisible(!adminTabVisible)}

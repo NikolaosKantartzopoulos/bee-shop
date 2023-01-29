@@ -1,11 +1,13 @@
 .mainNavbar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-flow: row wrap;
+  flex-basis: 70%;
   align-items: center;
   width: 100%;
   height: 100%;
   text-align: center;
   height: 3rem;
+  gap: 0.5rem;
 }
 
 @media screen and (max-width: 450px) {
@@ -21,13 +23,12 @@
 }
 
 .mainNavbar>* {
-  flex-grow: 1;
   text-align: center;
 }
 
 .mainNavbar a,
 .linkPlaceholder {
-  width: 100%;
+  flex: 1 1 auto;
   margin: 0;
   padding-top: 0.6rem;
   height: 3rem;
@@ -74,7 +75,6 @@
   align-items: flex-start;
   gap: 4px;
   text-align: left;
-  padding-bottom: 12px;
   z-index: 99999;
   font-size: 1.25rem;
   transform: translateX(0);
@@ -88,7 +88,7 @@
 .hoverTabVisible a {
   font-size: 1.25rem;
   padding-left: 12px;
-  padding-bottom: 8px;
+  width: 100%;
 }
 
 .hoverTabVisible a:hover {
@@ -101,23 +101,23 @@
   position: absolute;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
 
   .mainNavbar {
-    gap: 0rem;
     font-size: 1.2rem;
-    grid-row: 1 / 3;
-    grid-column: 1 / 5;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    flex: 1 1 auto;
 
   }
 
+
+
   .mainNavbar a,
   .linkPlaceholder {
-    width: 100%;
-    height: 100%;
     padding-top: 0.8rem;
-
-    position: relative;
+    flex: 1 1 auto;
     cursor: pointer;
   }
 

@@ -76,6 +76,7 @@ export default function Component() {
 				width={48}
 				height={48}
 				onClick={handleAccountDropdownVisibility}
+				priority
 			/>
 			{toolsCtx.dropdownOpen === "accountDropdownVisible" && (
 				<div className={styles.dropdownDiv}>

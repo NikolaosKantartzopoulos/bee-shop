@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 				if (delRes.deletedCount == 1) {
 					res.status(200).json({ type: "ok", text: "Item deleted" });
 				} else {
-					res.status(500);
+					res.status(550);
 				}
 		}
 	} finally {
