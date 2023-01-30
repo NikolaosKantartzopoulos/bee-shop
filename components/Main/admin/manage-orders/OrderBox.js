@@ -37,7 +37,7 @@ function OrderBox({ order }) {
 	return (
 		<div className={styles.orderBox}>
 			<div className={styles.statusDiv}>
-				<h4 className={styles.orderStatusHeader}>
+				<h1 className={styles.orderStatusHeader}>
 					<Button onClick={() => router.push("/admin/manage-orders")}>
 						Back
 					</Button>
@@ -52,7 +52,7 @@ function OrderBox({ order }) {
 							<option value="courier">Courier</option>
 						</select>
 					</span>
-				</h4>
+				</h1>
 				<table className={tableStyles.productsTable}>
 					<tbody>
 						<tr>
@@ -67,7 +67,7 @@ function OrderBox({ order }) {
 				</table>
 			</div>
 			<div className={styles.statusDiv}>
-				<h4>Items</h4>
+				<h1>Items</h1>
 				<div className={styles.itemsDiv}>
 					<table className={tableStyles.productsTable}>
 						<thead>
@@ -98,7 +98,7 @@ function OrderBox({ order }) {
 				</div>
 			</div>
 			<div className={styles.statusDiv}>
-				<h4>Shipping information</h4>
+				<h1>Shipping information</h1>
 				<table className={tableStyles.productsTable}>
 					<tbody>
 						<tr>

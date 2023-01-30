@@ -3,13 +3,23 @@
   grid-template-columns: 10rem 20rem;
   align-items: center;
   gap: 10px;
-  margin: 10px;
+  margin: auto;
 }
 
 
 .inputDiv>input {
   height: 1.5rem;
   width: 100%;
+}
+
+.inputDiv input,
+.inputDiv label {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.inputDiv label {
+  font-weight: bold
 }
 
 @media screen and (max-width: 600px) {

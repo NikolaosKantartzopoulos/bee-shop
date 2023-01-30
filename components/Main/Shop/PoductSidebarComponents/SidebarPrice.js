@@ -7,7 +7,7 @@ import styles from "./ProductsSidebarComponents.module.css";
 function SidebarPrice({ dispatchInputStateAction, inputState }) {
 	return (
 		<section>
-			<h4>Price</h4>
+			<h1>Price</h1>
 			<div id="price-range" className={styles.priceRangeSection}>
 				<label htmlFor="lowerPrice">
 					From €

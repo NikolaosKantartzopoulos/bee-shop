@@ -7,7 +7,7 @@ import styles from "./ProductsSidebarComponents.module.css";
 function SidebarSize({ dispatchInputStateAction, inputState }) {
 	return (
 		<section>
-			<h4>Size</h4>
+			<h1>Size</h1>
 			<div className={styles.priceRangeSection}>
 				<label htmlFor="sizeLowest">
 					From gr

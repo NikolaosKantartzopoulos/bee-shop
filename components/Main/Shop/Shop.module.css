@@ -3,7 +3,7 @@
   flex-direction: row;
   margin: auto;
   padding-top: 1rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 5rem);
   justify-content: flex-start;
   align-items: flex-start;
   text-align: center;
@@ -20,7 +20,7 @@
 }
 
 .searchImage {
-  position: fixed;
+  position: sticky;
   cursor: pointer;
   margin: 4px;
   z-index: 10;

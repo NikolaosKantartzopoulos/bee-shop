@@ -3,7 +3,7 @@ import React from "react";
 function SidebarFrom({ handleFromSelection, inputState, products }) {
 	return (
 		<section>
-			<h4>Harvested from</h4>
+			<h1>Harvested from</h1>
 			<select
 				onChange={(e) => handleFromSelection(e)}
 				value={inputState.selectedFrom}

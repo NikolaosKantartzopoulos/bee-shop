@@ -19,6 +19,7 @@
   align-items: center;
   justify-content: center;
   z-index: 0;
+  font-weight: bold;
 }
 
 .productSlot h2 {

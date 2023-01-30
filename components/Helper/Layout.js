@@ -38,22 +38,24 @@ export default function Layout({ children }) {
 					mountOnEnter
 					unmountOnExit
 				>
-					<main style={{ minHeight: "calc(100vh - 5rem)" }} ref={nodeRef}>
-						{toolsCtx.dropdownOpen && (
-							<div
-								style={{
-									position: "absolute",
-									width: "100vw",
-									height: "100vh",
-									zIndex: 3,
-								}}
-								onClick={() => toolsCtx.setDropdownOpen("")}
-							/>
-						)}
-						{children}
-					</main>
+					<>
+						<main style={{ minHeight: "calc(100vh - 5rem)" }} ref={nodeRef}>
+							{toolsCtx.dropdownOpen && (
+								<div
+									style={{
+										position: "absolute",
+										width: "100%",
+										height: "calc(100vh - 5rem)",
+										zIndex: 3,
+									}}
+									onClick={() => toolsCtx.setDropdownOpen("")}
+								/>
+							)}
+							{children}
+						</main>
+						<Footer />
+					</>
 				</CSSTransition>
-				<Footer />
 			</div>
 		</>
 	);

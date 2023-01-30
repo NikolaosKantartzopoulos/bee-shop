@@ -68,7 +68,7 @@ function GetOrderDetails() {
 
 	return (
 		<div className={styles.getOrderDetailsPage}>
-			<h4>Order details</h4>
+			<h1>Order details</h1>
 			<p>
 				To change Billing Address and your Email, please do so from your Account
 				Settings

@@ -44,7 +44,7 @@ function ManageOrders({ lastWeekOrders }) {
 
 	return (
 		<div className={styles.ManageOrdersPageRoute}>
-			<h4>Orders</h4>
+			<h1>Orders</h1>
 			<div className={styles.checkboxesDiv}>
 				<div>
 					<label htmlFor="seen">Seen</label>
@@ -62,7 +62,7 @@ function ManageOrders({ lastWeekOrders }) {
 					<label htmlFor="gathering products">Gathering Products</label>
 					<input
 						type="checkbox"
-						id="sgathering products"
+						id="gathering products"
 						value={true}
 						checked={gatheringProductsVisible}
 						onChange={(e) => {

@@ -3,6 +3,8 @@ import ProductSlot from "./ProductSlot";
 
 import ShowcaseContext from "../../../data/context/showcase-context";
 
+import LoadingSpinner from "../../UI/LoadingSpinner";
+
 import shopStyles from "./Shop.module.css";
 import styles from "./ShopGallery.module.css";
 
@@ -19,6 +21,11 @@ function ProductGallery() {
 			)}
 		</div>
 	);
+
+	if (!showcaseCtx.itemsShowcased) {
+		return <LoadingSpinner />;
+	}
+
 	return (
 		<div
 			className={shopStyles.ProductGallerySection}
