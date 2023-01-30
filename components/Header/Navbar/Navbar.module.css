@@ -46,7 +46,8 @@
 
   background-color: var(--support-dark-1);
   top: 3rem;
-  width: 12rem;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -67,7 +68,7 @@
   background-color: var(--support-dark-1);
   top: 3rem;
   right: 0;
-  width: 12rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

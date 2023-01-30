@@ -9,12 +9,14 @@ import Button from "../UI/Button";
 
 import styles from "./Header.module.css";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 
 function Cart() {
 	const cartCtx = useContext(CartContext);
 	const toolsCtx = useContext(ToolsContext);
 
 	const router = useRouter();
+	const { data: session } = useSession();
 
 	const [orderSubmited, setOrderSubmited] = useState(false);
 
@@ -98,7 +100,7 @@ function Cart() {
 						</>
 					)}
 					{!orderSubmited && cartCtx.cartState.items.length === 0 && (
-						<p>Cart is Empty!</p>
+						<p>{session ? "Cart is Empty!" : "Sign in to order!"}</p>
 					)}
 				</div>
 			)}

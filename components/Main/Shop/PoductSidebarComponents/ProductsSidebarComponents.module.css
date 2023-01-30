@@ -9,7 +9,8 @@
 .sidebarSection>section>h1 {
 
   margin-bottom: 4px;
-
+  width: 100%;
+  font-size: 1.1rem;
 }
 
 .sidebarSection input {

@@ -67,10 +67,11 @@
   top: 3rem;
   right: 0rem;
   background-color: var(--light-main-1);
-  border: 5px double var(--black);
+  border: 5px double var(--dark-main-1);
   color: var(--black);
-  width: 17rem;
+  width: 100%;
   display: flex;
+  gap: 8px;
   flex-direction: column;
   justify-content: center;
   padding: 8px;

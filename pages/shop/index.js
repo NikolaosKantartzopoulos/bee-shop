@@ -16,6 +16,7 @@ import honeycomb from "../../public/assets/images/honeycomb.jpg";
 
 import styles from "../../components/Main/Shop/Shop.module.css";
 import ToolsContext from "../../data/context/tools-context";
+import { createPortal } from "react-dom";
 
 function Shop({ allProducts, session }) {
 	const cartCtx = useContext(CartContext);
@@ -54,12 +55,15 @@ function Shop({ allProducts, session }) {
 				priority
 				style={{ opacity: 0.4 }}
 			/>
-			<Image
-				src={SearchIcon}
-				alt="Search Products"
-				className={styles.searchImage}
-				onClick={handleFilterSidebarVisibility}
-			/>
+			{createPortal(
+				<Image
+					src={SearchIcon}
+					alt="Search Products"
+					className={styles.searchImage}
+					onClick={handleFilterSidebarVisibility}
+				/>,
+				document.body
+			)}
 			<ProductSidebar />
 			<ProductGallery />
 		</div>

@@ -20,13 +20,14 @@
 }
 
 .searchImage {
-  position: sticky;
+  position: fixed;
   cursor: pointer;
   margin: 4px;
   z-index: 10;
   background-color: var(--dark-main-1);
   border-radius: 50%;
-  top: 0.5rem;
+  bottom: 0rem;
+  left: 0px;
 }
 
 .searchImage:hover {

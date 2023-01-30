@@ -63,7 +63,7 @@ function ContactRouterIndex() {
 						</h4>
 						<textarea
 							id="subject"
-							cols={60}
+							cols={35}
 							rows={10}
 							value={subject}
 							onChange={(e) => setSubject(e.target.fullname)}
