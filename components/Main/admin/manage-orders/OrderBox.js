@@ -4,7 +4,7 @@ import ToolsContext from "../../../../data/context/tools-context";
 import Button from "../../../UI/Button";
 
 import styles from "./OrderBox.module.css";
-import tableStyles from "./OrdersTable.module.css";
+import tableStyles from "./OrderBoxTable.module.css";
 
 function OrderBox({ order }) {
 	const localDate = new Date(order.date).toLocaleString("en-GB");
