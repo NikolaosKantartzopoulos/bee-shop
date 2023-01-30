@@ -37,9 +37,10 @@ h1 {
   text-align: center;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  padding: 0.5rem;
+  padding: 0.25rem;
   background-color: var(--dark-main-1);
-  color: var(--light-main-1)
+  color: var(--light-main-1);
+  font-size: 1.25rem;
 }
 
 h2 {

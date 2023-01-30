@@ -38,11 +38,16 @@
 }
 
 .productsTable th:nth-child(1),
-.productsTable th:nth-child(2),
-.productsTable td:nth-child(1) .productsTable td:nth-child(2) {
+.productsTable td:nth-child(1) {
 	min-width: 8rem;
 
 }
+
+.productsTable th:nth-child(2),
+.productsTable td:nth-child(2) {
+	width: 4rem;
+}
+
 
 .productsTable input {
 	max-width: 6rem;
@@ -83,5 +88,30 @@
 @media screen and (max-width: 600px) {
 	.productsTable {
 		overflow: hidden;
+
 	}
+
+
+	.productsTable th:nth-child(4),
+	.productsTable td:nth-child(4) {
+		font-size: small;
+
+	}
+
+	.productsTable th:nth-child(2),
+	.productsTable td:nth-child(2),
+	.productsTable th:nth-child(3),
+	.productsTable td:nth-child(3) {
+		font-size: small;
+
+	}
+
+	.productsTable th:nth-child(1),
+	.productsTable td:nth-child(1),
+	.productsTable th:nth-child(5),
+	.productsTable td:nth-child(5) {
+		display: none;
+	}
+
+
 }
