@@ -38,6 +38,10 @@ function ManageOrders({ lastWeekOrders }) {
 		fetchOrders();
 	}, [seenVisible, gatheringProductsVisible, courier, lastWeek]);
 
+	if (!lastWeekOrders) {
+		return <LoadingSpinner />;
+	}
+
 	return (
 		<div className={styles.ManageOrdersPageRoute}>
 			<h4>Orders</h4>

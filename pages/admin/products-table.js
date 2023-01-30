@@ -79,7 +79,7 @@ function ProductsTable({ allProducts }) {
 	}
 
 	return (
-		<section style={{ overflow: "auto" }}>
+		<section style={{ overflow: "hidden" }}>
 			<table className={styles.productsTable}>
 				<thead>
 					<tr>

@@ -20,7 +20,7 @@
 }
 
 .searchImage {
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   margin: 4px;
   z-index: 10;
