@@ -13,7 +13,11 @@ export default async function handler(req, res) {
 				} else {
 					const postResOK = await db
 						.collection("users")
-						.insertOne({ ...signupItem, admin: false });
+						.insertOne({
+							...signupItem,
+							admin: false,
+							subscribedAtNewsletter: false,
+						});
 					if (postResOK.acknowledged) {
 						res.status(200).json({
 							type: "ok",

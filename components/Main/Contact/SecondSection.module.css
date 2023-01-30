@@ -12,7 +12,15 @@
   width: 100%;
 }
 
-
+.secondPart {
+  margin: 0.5rem auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: stretch;
+  justify-content: center;
+}
 
 
 
