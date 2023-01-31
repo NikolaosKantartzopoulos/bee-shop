@@ -75,6 +75,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 8px;
+  min-width: 16rem;
 }
 
 .itemRow {

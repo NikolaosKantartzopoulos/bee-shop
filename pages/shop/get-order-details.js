@@ -6,6 +6,9 @@ import { getSession, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 import Button from "../../components/UI/Button";
+import ToolsContext from "../../data/context/tools-context";
+
+const toolsCtx = useContext(ToolsContext);
 
 function GetOrderDetails() {
 	const cartCtx = useContext(CartContext);
@@ -57,6 +60,7 @@ function GetOrderDetails() {
 		});
 		if (res.ok) {
 			const data = await res.json();
+			toolsCtx.setInfo(data);
 		}
 
 		cartCtx.emptyCart();
