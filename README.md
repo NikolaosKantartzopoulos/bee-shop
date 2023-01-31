@@ -54,6 +54,7 @@ Sample e-shop site!
 
 
   -  Manage Products, orders, read comments.
+     - If you add a product URL for image MUST be from [Unsplash](https://unsplash.com/)
   -  Order UI allows you to control which ordrers you see (What stage and how old)!
 
 
