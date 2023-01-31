@@ -1,0 +1,31 @@
+.readCommentsPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 760px;
+  align-items: stretch;
+}
+
+.commentDiv {
+  margin: auto;
+
+
+  justify-content: center;
+  align-items: center;
+  min-width: 350px;
+
+}
+
+.infoDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.subjectDiv {
+  border: 1px solid black;
+  min-height: 10rem;
+  padding: 0.5rem;
+  white-space: pre-wrap;
+}

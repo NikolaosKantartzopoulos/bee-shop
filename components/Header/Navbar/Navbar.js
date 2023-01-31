@@ -105,6 +105,17 @@ function Navbar({ setInProp }) {
 						</Link>
 						<Link
 							onClick={() => {
+								if (currentRoute === "/admin/read-comments") {
+									return;
+								}
+								setInProp(false);
+							}}
+							href="/admin/read-comments"
+						>
+							Read comments
+						</Link>
+						{/* <Link
+							onClick={() => {
 								if (currentRoute === "/admin/handle-newsletter") {
 									return;
 								}
@@ -113,7 +124,7 @@ function Navbar({ setInProp }) {
 							href="/admin/handle-newsletter"
 						>
 							Newsletter
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 			)}

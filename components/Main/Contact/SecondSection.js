@@ -67,7 +67,7 @@ function SecondSection() {
 					<p>tel: +123 345 5678</p>
 					<address>Country, City, Some street No 4 </address>
 				</div>
-				{session && (
+				{/* {session && (
 					<>
 						{isLoading ? (
 							<LoadingSpinner />
@@ -86,7 +86,7 @@ function SecondSection() {
 							</div>
 						)}
 					</>
-				)}
+				)} */}
 			</div>
 		</section>
 	);

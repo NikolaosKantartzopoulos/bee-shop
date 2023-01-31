@@ -20,7 +20,7 @@ function AboutUS() {
 			<div id="twoWords" className={styles.twoWords}>
 				<div id="profile" className={styles.profile}>
 					<h3>PROFILE</h3>
-					<span>
+					<div>
 						There are many variations of passages of Lorem Ipsum available, but
 						the majority have suffered alteration in some form, by injected
 						humour, or randomised words which don't look even slightly
@@ -33,11 +33,11 @@ function AboutUS() {
 						generate Lorem Ipsum which looks reasonable. The generated Lorem
 						Ipsum is therefore always free from repetition, injected humour, or
 						non-characteristic words etc.
-					</span>
+					</div>
 				</div>
 				<div id="ourMission" className={styles.ourMission}>
 					<h3>OUR MISSION</h3>
-					<span>
+					<div>
 						Contrary to popular belief, Lorem Ipsum is not simply random text.
 						It has roots in a piece of classical Latin literature from 45 BC,
 						making it over 2000 years old. Richard McClintock, a Latin professor
@@ -50,7 +50,7 @@ function AboutUS() {
 						treatise on the theory of ethics, very popular during the
 						Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
 						amet..", comes from a line in section 1.10.32.
-					</span>
+					</div>
 				</div>
 			</div>
 			<div id="theBeekeeper" className={styles.smallBio}>

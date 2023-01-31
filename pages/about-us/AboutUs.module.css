@@ -3,6 +3,8 @@
   padding: 1rem;
 }
 
+
+
 .bgImage {
   object-fit: cover;
   opacity: 0.5;
@@ -15,14 +17,12 @@
     display: grid;
     grid-template-columns: 0.6fr 0.4fr;
     position: relative;
-    height: 100vh;
+    height: 95vh;
   }
-
 
 
   .profile {
     position: absolute;
-    top: 5vh;
     left: 5vw;
     right: 50vw;
     text-align: justify
@@ -30,7 +30,7 @@
 
   .ourMission {
     position: absolute;
-    top: 60vh;
+    top: 40vh;
     left: 45vw;
     right: 5vw;
     text-align: justify
@@ -43,12 +43,21 @@
 
 .profile {
   display: block;
+
+  margin: 2rem auto;
+  margin-bottom: 4rem;
 }
 
 .ourMission {
-  display: block
+  display: block;
+  margin: 2rem auto;
+
 }
 
+.ourMission div {
+  display: block;
+  margin-top: 1rem;
+}
 
 .smallBio,
 .someWords {
@@ -68,6 +77,10 @@
 
 .beekeeperImage {
   border-radius: 50%;
-  margin: auto;
+  margin: 1rem auto;
 
+}
+
+.aboutUsSection span {
+  margin-top: 2rem;
 }
