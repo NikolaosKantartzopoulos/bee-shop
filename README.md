@@ -1,4 +1,4 @@
-### Ongoing project - [Live link](https://bee-shop-azure.vercel.app/shop)
+### Ongoing project - [Live link](https://bee-shop-nk.vercel.app/shop)
 
 ---
 
@@ -16,6 +16,47 @@
 
 Sample e-shop site!
 
+### Quick tour
+
+---
+ #### User UI
+ 
+ Log in as user to access the SHOP...
+  
+  **username**   user1
+  
+  **password**  user1
+ 
+  -- or --  
+  
+  **Sign up!**
+
+---
+
+####  Place an order...
+
+ ...using filters to find the product you want (see magnifying glass at bottom right corner?)
+
+-- or --
+
+#### Use contact form to submit a comment!
+
+---
+
+#### Log in as Admin... 
+
+...to access the Admin UI.
+
+ **username** admin
+ 
+ **password** admin
+
+
+
+  -  Manage Products, orders, read comments.
+  -  Order UI allows you to control which ordrers you see (What stage and how old)!
+
+
 ### Development
 
 ---
@@ -24,9 +65,4 @@ Sample e-shop site!
 git clone https://github.com/NikolaosKantartzopoulos/bee-shop.git && cd ./med-next && npm i && npm run dev
 ```
 
----
 
-**Login**
-
-- Username: admin
-- Password: admin
