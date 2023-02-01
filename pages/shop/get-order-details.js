@@ -8,9 +8,8 @@ import { useRouter } from "next/router";
 import Button from "../../components/UI/Button";
 import ToolsContext from "../../data/context/tools-context";
 
-const toolsCtx = useContext(ToolsContext);
-
 function GetOrderDetails() {
+	const toolsCtx = useContext(ToolsContext);
 	const cartCtx = useContext(CartContext);
 
 	const { data: session } = useSession();
