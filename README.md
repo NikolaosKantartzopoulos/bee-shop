@@ -1,4 +1,4 @@
-### Ongoing project - [Live link](https://bee-shop-nk.vercel.app/shop)
+### Sample e-shop - [Live link](https://bee-shop-nk.vercel.app/shop)
 
 ---
 
