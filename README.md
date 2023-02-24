@@ -63,7 +63,7 @@ Sample e-shop site!
 ---
 
 ```
-git clone https://github.com/NikolaosKantartzopoulos/bee-shop.git && cd ./med-next && npm i && npm run dev
+git clone https://github.com/NikolaosKantartzopoulos/bee-shop.git && cd ./bee-shop && npm i && npm run dev
 ```
 
 
