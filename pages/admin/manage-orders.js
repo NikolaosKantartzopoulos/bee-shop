@@ -16,7 +16,7 @@ function ManageOrders({ lastWeekOrders }) {
 	const [gatheringProductsVisible, setGatheringProductsVisible] =
 		useState(true);
 	const [courier, setCourier] = useState(false);
-	const [lastWeek, setLastWeek] = useState(true);
+	const [lastWeek, setLastWeek] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
