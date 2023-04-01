@@ -1,4 +1,6 @@
 import React from "react";
+import { getSession } from "next-auth/react";
+
 import { connectDatabase } from "../../data/databaseFunctions";
 
 import styles from "../../components/Helper/pages-css/read-comments.module.css";
@@ -24,6 +26,15 @@ function ReadCommentsRouteIndex({ allComments }) {
 export default ReadCommentsRouteIndex;
 
 export const getServerSideProps = async () => {
+	const session = await getSession({ req: context.req });
+	if (!session) {
+		return {
+			redirect: {
+				destination: "/about-us",
+				permanent: false,
+			},
+		};
+	}
 	const [client, db] = await connectDatabase();
 	const comID = await db.collection("comments").find().toArray();
 	const allComments = comID.map((com) => ({ ...com, _id: com._id.toString() }));

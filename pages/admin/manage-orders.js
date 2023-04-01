@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { getSession } from "next-auth/react";
+
 import { connectDatabase } from "../../data/databaseFunctions";
 
 import OrdersTable from "../../components/Main/admin/manage-orders/OrdersTable";
@@ -109,6 +111,17 @@ function ManageOrders({ lastWeekOrders }) {
 export default ManageOrders;
 
 export const getServerSideProps = async (ctx) => {
+	const session = await getSession({ req: context.req });
+
+	if (!session) {
+		return {
+			redirect: {
+				destination: "/about-us",
+				permanent: false,
+			},
+		};
+	}
+
 	const [client, db] = await connectDatabase();
 
 	const today = new Date();
