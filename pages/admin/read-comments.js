@@ -27,6 +27,12 @@ export default ReadCommentsRouteIndex;
 
 export const getServerSideProps = async () => {
 	const session = await getSession({ req: context.req });
+
+	const [client, db] = await connectDatabase();
+	const comID = await db.collection("comments").find().toArray();
+	const allComments = comID.map((com) => ({ ...com, _id: com._id.toString() }));
+	await client.close();
+
 	if (!session) {
 		return {
 			redirect: {
@@ -35,10 +41,7 @@ export const getServerSideProps = async () => {
 			},
 		};
 	}
-	const [client, db] = await connectDatabase();
-	const comID = await db.collection("comments").find().toArray();
-	const allComments = comID.map((com) => ({ ...com, _id: com._id.toString() }));
-	await client.close();
+
 	return {
 		props: {
 			allComments: allComments,

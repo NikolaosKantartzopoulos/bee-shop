@@ -113,15 +113,6 @@ export default ManageOrders;
 export const getServerSideProps = async (ctx) => {
 	const session = await getSession({ req: context.req });
 
-	if (!session) {
-		return {
-			redirect: {
-				destination: "/about-us",
-				permanent: false,
-			},
-		};
-	}
-
 	const [client, db] = await connectDatabase();
 
 	const today = new Date();
@@ -141,6 +132,16 @@ export const getServerSideProps = async (ctx) => {
 		_id: ord._id.toString(),
 	}));
 	await client.close();
+
+	if (!session) {
+		return {
+			redirect: {
+				destination: "/about-us",
+				permanent: false,
+			},
+		};
+	}
+
 	return {
 		props: {
 			lastWeekOrders: lastWeekOrders,
