@@ -25,7 +25,7 @@ function ReadCommentsRouteIndex({ allComments }) {
 
 export default ReadCommentsRouteIndex;
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
 	const session = await getSession({ req: context.req });
 
 	const [client, db] = await connectDatabase();

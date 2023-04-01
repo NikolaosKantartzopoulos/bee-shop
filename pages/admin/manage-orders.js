@@ -110,7 +110,7 @@ function ManageOrders({ lastWeekOrders }) {
 
 export default ManageOrders;
 
-export const getServerSideProps = async (ctx) => {
+export const getServerSideProps = async (context) => {
 	const session = await getSession({ req: context.req });
 
 	const [client, db] = await connectDatabase();
